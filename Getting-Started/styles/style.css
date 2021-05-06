@@ -18,6 +18,7 @@ h1 {
     margin: 0;
     padding: 20px 0; /*20px=>Top&Bottom 0=>Left&Right*/
     color: #00539f;
+<<<<<<< HEAD
     text-shadow: 3px 3px 1px #fff;
 }
 
@@ -28,6 +29,9 @@ h2 {
     padding: 10px 0;
     color: #dc143c;
     text-shadow: 3px 3px 1px #fff;
+=======
+    text-shadow: 3px 3px 1px #000;
+>>>>>>> b2357a1f5ff5782bdf2bfe9260716ec1116ba48b
 }
 
 img {
