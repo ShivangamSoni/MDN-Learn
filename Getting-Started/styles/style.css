@@ -1,0 +1,43 @@
+html {
+    font-size: 10px;
+    font-family: "Open sans", sans-serif;
+    background-color: #00539f;
+}
+
+body {
+    width: 600px;
+    margin: 0 auto;
+    background-color: #ff9500;
+    padding: 0 20px 20px 20px;
+    border: 5px solid #000;
+}
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+    margin: 0;
+    padding: 20px 0; /*20px=>Top&Bottom 0=>Left&Right*/
+    color: #00539f;
+    text-shadow: 3px 3px 1px #fff;
+}
+
+h2 {
+    font-size: 40px;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+    color: #dc143c;
+    text-shadow: 3px 3px 1px #fff;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+p,
+li {
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 1px;
+}
