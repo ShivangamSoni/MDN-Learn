@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Formatting Text</title>
+    </head>
+    <body>
+        <!--
+            Quotation Markup can be done in Two Ways:
+            1.Block-Quotes using <blockquote>
+            2.In-Line Quote using <quote>
+        
+            Default Browser Styling will render the Blockquote as an indented paragraph
+        -->
+        <p>Here below is a blockquote...</p>
+        <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+            <p>
+                The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or <em>HTML Block
+                Quotation Element</em>) indicates that the enclosed text is an extended quotation.
+            </p>
+        </blockquote>
+
+        <p>
+            The quote element — <code>&lt;q&gt;</code> — is 
+            <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">
+                intended for short quotations that don't require paragraph breaks.
+            </q>
+        </p>
+
+        <!--
+            Citation is set using cite attribute, but browsers and screen-readers don't use it.
+            There is a <cite> element that contains the title of the resource being quoted
+        -->
+        <p>
+            According to the <a href="/en-US/docs/Web/HTML/Element/blockquote">
+            <cite>MDN blockquote page</cite></a>:
+        </p>    
+        
+        <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+            <p>
+                The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or <em>HTML Block
+                Quotation Element</em>) indicates that the enclosed text is an extended quotation.
+            </p>
+        </blockquote>
+            
+        <p>
+            The quote element — <code>&lt;q&gt;</code> — is 
+            <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">
+                intended for short quotations that don't require paragraph breaks.
+            </q> -- 
+            <a href="/en-US/docs/Web/HTML/Element/q">
+                <cite>MDN q page</cite>
+            </a>.
+        </p>
+    </body>
+</html>
