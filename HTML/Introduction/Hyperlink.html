@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hyperlinks</title>
+    </head>
+    <body>
+        <!--
+            We can link documents to other documents or resource, link to specific part of web-Page 
+            or make stuff available at a Web Address using HyperLinks
+
+            A Link is created using an Anchor Tag<a></a> by wrapping text or other content.
+            Link is set using the Hyper-Reference(href) attribute
+        -->
+        <p id="Home">
+            I'm creating a link to <a href="https://www.mozilla.org/">the Mozilla homepage</a>.
+        </p>
+        <!--
+            To add some supportive information we can use 'title' attribute
+            Content of Title  is displayed when user Hovers Over it.
+        -->
+        <p>
+            I'm creating a link to 
+            <a href="https://www.mozilla.org/"
+             title="The best place to find more information about Mozilla's
+             mission and how to contribute">the Mozilla homepage</a>.
+        </p>
+
+        <!--
+            To Navigate within the Target or the Current Web-Page we can use Id's given to the Page Elements
+        -->
+        <img src="https://img.icons8.com/dusk/512/000000/html-5.png">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <p>
+            <a href="#Home">Go To Top</a>
+        </p>
+
+        <!--
+            Using 'target' attribute we can specify if the link opens on the same page or new tab
+            By default links open on the same page, by setting target to '_blank' the link opens in New Tab
+        -->
+        <p>
+            <a href="https://www.youtube.com/watch?v=ZXN5VBLCOZw" target="_blank">
+            Watch this Random video</a>
+        </p>
+
+        <!--
+            On Using 'download' attribute the browser will download the file rather than opening it
+            Value set to the download attribute is used as default filename on save
+        -->
+        <a href="https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=en-US"
+        download="firefox-latest-64bit-installer.exe">
+        Download Latest Firefox for Windows (64-bit) (English, US)
+        </a>
+    </body>
+</html>
