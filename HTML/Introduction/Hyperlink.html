@@ -52,5 +52,19 @@
         download="firefox-latest-64bit-installer.exe">
         Download Latest Firefox for Windows (64-bit) (English, US)
         </a>
+
+        <!--
+            Using 'mailto:' URL Scheme we can direct the link to send an email
+            With the emailID we can add CC, BCC, Subject & Even Body.
+            Although here we are using HTTP GET to Pass the Fields to mail client & GET have a URL Character Limit of 2048
+        -->
+        <p>
+            <a href="mailto:nowhere@mozilla.org">Send E-Mail to nowhere</a>
+        </p>
+        <p>
+            <a href="mailto:nowhere@mozilla.org?cc=name2@rapidtables.com&bcc=name3@rapidtables.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email"> 
+                Send E-Mail with CC, BCC, Subject and Body
+            </a>
+        </p>
     </body>
 </html>
