@@ -12,7 +12,7 @@
         
             Default Browser Styling will render the Blockquote as an indented paragraph
         -->
-        <p>Here below is a blockquote...</p>
+        <h2>Blockquote</h2>
         <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
             <p>
                 The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or <em>HTML Block
@@ -20,6 +20,7 @@
             </p>
         </blockquote>
 
+        <h2>In-Line Quote</h2>
         <p>
             The quote element — <code>&lt;q&gt;</code> — is 
             <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">
@@ -31,6 +32,7 @@
             Citation is set using cite attribute, but browsers and screen-readers don't use it.
             There is a <cite> element that contains the title of the resource being quoted
         -->
+        <h2>Citation</h2>
         <p>
             According to the <a href="/en-US/docs/Web/HTML/Element/blockquote">
             <cite>MDN blockquote page</cite></a>:
@@ -52,5 +54,94 @@
                 <cite>MDN q page</cite>
             </a>.
         </p>
+
+        <!--
+            <abbr> is used to wrap around an abbreviation or acronym, 
+            and provide a full expansion of the term included in title
+        -->
+        <h2>Abbreviation</h2>
+        <p>
+            <abbr title="Hyper-Text Markup Language">HTML</abbr>
+            <abbr title="Cascading Style Sheet">CSS</abbr>
+            <abbr title="JavaScript">JS</abbr>
+        </p>
+
+        <!--
+            Marking up Contact Details
+            We can use <address> element to wrap around contact details
+        -->
+        <h2>Address & Contact Details</h2>
+        <address>
+            <p>
+                Chris Mills<br>
+                Manchester<br>
+                The Grim North<br>
+                UK
+            </p>
+
+            <ul>
+                <li>Tel: 01234 567 890</li>
+                <li>Email: me@grim-north.co.uk</li>
+            </ul>
+        </address>
+
+        <!--
+            Superscript <sup>
+            Subscript <sub>
+        -->
+        <h2>Sub-Script & Super-Script</h2>
+        <p>My birthday is on the 15<sup>th</sup> of August.</p>
+        <p>Caffeine's chemical formula is C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>.</p>
+        <p>If x<sup>2</sup> is 9, x must equal 3 or -3.</p>
+
+        <!--
+            Representing Code:
+                1.<code>: For marking up generic pieces of computer code.
+                2.<pre>: For retaining whitespace, generally Browser ignores additional indentations & White-spaces.
+                3.<var>: For specifically marking up variable names.
+                4.<kbd>: For marking up keyboard and other types of input entered into the computer.
+                5.<samp>: For marking up the Sample output of a computer program.
+        -->
+        <h2>Code Text Markup</h2>
+        <pre>
+            <code>
+                var para = document.querySelector('p');
+                para.onclick = function() {
+                    alert('Owww, stop poking me!');
+                }
+            </code>
+        </pre>
+        <p>In the above JavaScript example, <var>para</var> represents a paragraph element.</p>    
+        <p>Select all the text with <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>A</kbd>.</p>
+        <pre>
+            $ <kbd>ping mozilla.org</kbd>
+            <samp>
+                PING mozilla.org (63.245.215.20): 56 data bytes
+                64 bytes from 63.245.215.20: icmp_seq=0 ttl=40 time=158.233 ms
+            </samp>
+        </pre>
+
+        <!--
+            Time & Dates are marked up using <time> tag & datetime attribute
+        -->
+        <h2>Date Time</h2>
+        <pre>
+            <!-- Standard simple date -->
+            <time datetime="2016-01-20">20 January 2016</time>
+            <!-- Just year and month -->
+            <time datetime="2016-01">January 2016</time>
+            <!-- Just month and day -->
+            <time datetime="01-20">20 January</time>
+            <!-- Just time- hours and minutes -->
+            <time datetime="19:30">19:30</time>
+            <!-- seconds and milliseconds -->
+            <time datetime="19:30:01.856">19:30:01.856</time>
+            <!-- Date and time -->
+            <time datetime="2016-01-20T19:30">7.30pm, 20 January 2016</time>
+            <!-- Date and time with timezone offset -->
+            <time datetime="2016-01-20T19:30+01:00">7.30pm, 20 January 2016 is 8.30pm in France</time>
+            <!-- Calling out a specific week number -->
+            <time datetime="2016-W04">The fourth week of 2016</time>
+        </pre>
     </body>
 </html>
