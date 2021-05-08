@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Audio & Video</title>
+    </head>
+    <body>
+        <!--
+            <video> element allows us to embed a video.
+            src attribute similar to img provides the Source of the Video
+            controls attribute enables the user to control the video using visual buttons
+
+            the paragraph inside the video element is called the fallback content-
+            which will be displayed if browser doesn't support <video> element
+        -->
+        <video src="videos/html_multimedia-and-embedding_video-and-audio-content_rabbit320.webm" controls>
+            <p>
+                Your browser doesn't support HTML5 video. 
+                Here is a <a href="videos/html_multimedia-and-embedding_video-and-audio-content_rabbit320.webm">link to the video</a> instead.
+            </p>
+        </video>
+
+        <!--
+            Since different browsers support different Video & Audio CODEC there's a possibility that the above video might not play
+            So, we can provide multiple sources using <source> elements inside video element
+
+            Type attribute specifies the MIME Type of the file specified
+            Type is optional, but if the type is available the browser will load the supported type of video
+            in absence of type attribute the browser will go through every source, taking more time & using additional resources
+        -->
+        <video controls>
+            <source src="videos/rabbit320.mp4" type="video/mp4">
+            <source src="videos/html_multimedia-and-embedding_video-and-audio-content_rabbit320.webm" type="video/webm">
+            <p>
+                Your browser doesn't support HTML5 video. Here is a 
+                <a href="videos/rabbit320.mp4">link to the video</a> instead.
+            </p>
+        </video>
+    </body>
+</html>
