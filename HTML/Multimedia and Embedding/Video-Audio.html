@@ -73,5 +73,17 @@
                 <a href="audios/html_multimedia-and-embedding_video-and-audio-content_viper.mp3">link to the audio</a> instead.
             </p>
         </audio>
+        <br>
+        <!--
+            Using '.vtt' files we can add Subtitles, Captions & Timed Descriptions
+            <track> element is used for linking an vtt to the video
+        -->
+        <video controls>
+            <source src="videos/rabbit320.mp4" type="video/mp4">
+            <source src="videos/html_multimedia-and-embedding_video-and-audio-content_rabbit320.webm" type="video/webm">
+            <track kind="subtitles" src="subtitles/subtitle_en.vtt" srclang="en" label="English">
+            <track kind="subtitles" src="subtitles/subtitles_es.vtt" srclang="es" label="Spanish">
+            <track kind="subtitles" src="subtitles/subtitles_fr.vtt" srclang="fr" label="French">
+        </video>
     </body>
 </html>
