@@ -120,6 +120,43 @@
                     as the Screen Readers can use the Caption text to describe the Table
             -->
             <caption>An Empty Table<caption>
+            
+            <!--
+                Table can be structured into Header, Body & Footer using:
+                    <thead>, <tbody> & <tfoot> these elements don't make any visual differences
+                    but make the table markup sectioned
+            -->
+            <thead>
+                <tr>
+                    <th>Heading 1</th>
+                    <th>Heading 2</th>
+                    <th>Heading 3</th>
+                    <th>Heading 4</th>
+                    <th>Heading 5</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                    <td>Data 3</td>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                </tr>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                    <td>Data 3</td>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">Footer Data 1</td>
+                    <td>Footer Data 2</td>
+                </tr>
+            </tfoot>
         </table>
     </body>
 </html>
