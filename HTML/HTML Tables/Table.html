@@ -124,8 +124,15 @@
             <!--
                 Table can be structured into Header, Body & Footer using:
                     <thead>, <tbody> & <tfoot> these elements don't make any visual differences
-                    but make the table markup sectioned
+                    but make the table markup sectioned & arranged accordingly
+                    so, regardless of the location in Code the Foot will be place at the end of the Table
             -->
+            <tfoot>
+                <tr>
+                    <td colspan="4">Footer Data 1</td>
+                    <td>Footer Data 2</td>
+                </tr>
+            </tfoot>
             <thead>
                 <tr>
                     <th>Heading 1</th>
@@ -151,12 +158,6 @@
                     <td>Data 5</td>
                 </tr>
             </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="4">Footer Data 1</td>
-                    <td>Footer Data 2</td>
-                </tr>
-            </tfoot>
         </table>
     </body>
 </html>
