@@ -83,5 +83,34 @@
                 <td>Rooster</td>
             </tr>
         </table>
+        <br><br>
+
+        <!--
+            To apply styling to an entire column we can use <colgroup>
+                <colgroup> is defined right after the opening <table> tag
+                within the <colgroup> <col> is used to define the styling
+                we can also use colspan attribute to apply the same style across multiple columns
+
+                In the below example the first empty col is to define default style
+                for the first column
+        -->
+        <table>
+            <colgroup>
+                <col>
+                <col style="background-color: yellow">
+            </colgroup>
+            <tr>
+                <th>Data 1</th>
+                <th>Data 2</th>
+            </tr>
+            <tr>
+                <td>Calcutta</td>
+                <td>Orange</td>
+            </tr>
+            <tr>
+                <td>Robots</td>
+                <td>Jazz</td>
+            </tr>
+        </table>
     </body>
 </html>
