@@ -1,0 +1,111 @@
+/*
+    ----BASIC SELECTORS----
+    1. ELement Name Selector:
+        - We use the element name to select them & apply styles
+        - All the elements of that type will be selected
+*/
+h1 {
+    color: red;
+}
+/* We can use multiple Selectors by separating them with commas */
+p,
+li {
+    color: green;
+}
+li {
+    list-style-type: none;
+}
+
+/*
+    2. Class Selector:
+        - To select specific elements we can use the Class by setting the class attribute of the element
+        - Classes are targeted by creating the selector that starts with a period/full stop character(.)
+        - Class is reusable and can be applied to any number of elements
+*/
+.special {
+    color: orange;
+    font-weight: bold;
+}
+/* To target a element having a specific class we can combine the Element & Class Selectors */
+li.special {
+    list-style-type: square;
+}
+span.special {
+    text-decoration: underline;
+}
+
+/*
+    ----STYLING THINGS BASED ON LOCATION IN THE DOCUMENT----
+    Descendant Combinator:
+        - In order to select a nested element we use the space
+
+    The Selector below will select any 'em' element that is nested inside(a descendant of) an 'li' element
+*/
+li em {
+    color: rebeccapurple;
+}
+
+/*
+    Adjacent Sibling Combinator:
+        - In order to select a direct sibling that comes directly after an element at the same hierarchy level we use the + symbol
+
+    The Selector below will select any 'p' element that comes directly after an 'h1' element on the same hierarchy level
+*/
+h1 + p {
+    font-size: 200%;
+}
+
+/*
+    ----STYLING THINGS BASED ON STATE----
+    Like the Anchor element have several states: 
+        - visited = a:link
+        - unvisited = a:visited
+        - being hovered over = a:hover
+*/
+a:link {
+    color: pink;
+}
+a:visited {
+    color: green;
+}
+a:hover {
+    text-decoration: none;
+}
+
+/* 
+    We can combine multiple Selectors & Combinators as pe our need
+    
+    The Selector will style 'hover' of any element with a class of 'special',
+    which is inside a '<p>', which comes just after an '<h1>', which is inside a '<body>'.
+*/
+body h1 + p .special:hover {
+    color: yellow;
+    background-color: black;
+    padding: 5px;
+}
+
+/*
+    ----CASCADE & SPECIFICITY----
+    CSS have Cascade & Specificity Rules to handle styling Conflicts
+    
+    Both the selectors below select the same element, but paragraph will be chartreuse
+    because the deceleration that sets it's color to chartreuse appears later in the style sheet.
+    Later Styles replace the conflicting styles. This is the CASCADE RULE.
+*/
+p {
+    color: pink;
+}
+p {
+    color: chartreuse;
+}
+/*
+    Both the selectors below are also selecting a same paragraph, but the paragraph will be blue
+    Here the cascade rule doesn't work because of the Specificity of Selectors
+    A class is rated as being more specific that a element name selector.
+*/
+.specific {
+    color: blue;
+}
+p + p {
+    color: red;
+}
