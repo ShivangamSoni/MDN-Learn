@@ -1,0 +1,50 @@
+/*
+    Some properties are not inherited like, border, padding, width, margin, etc.
+*/
+.main {
+    color: rebeccapurple;
+    border: 2px solid #ccc;
+    padding: 1em;
+}
+
+.special {
+    color: black;
+    font-weight: bold;
+}
+
+/*
+    Controlling Inheritance:
+        CSS provides four special universal values for controlling inheritance.
+        -inherit: Sets the property value to be inherited from the parent element
+        -initial: Sets the value to the initial value of property
+        -unset: resets the property to its natural value, which means if the property is naturally inherited it will be set to inherit else initial
+        -revert: it's a new value & not supported by many browsers & in most cases it works similar to unset
+*/
+div.control {
+    color: red;
+}
+
+.my-class-1 a {
+    color: inherit;
+}
+
+.my-class-2 a {
+    color: initial;
+}
+
+.my-class-3 a {
+    color: unset;
+}
+
+/*
+    all property can be used to set inheritance for almost all properties at once
+    It's a good way to reset the elements
+*/
+.all blockquote {
+    background-color: red;
+    border: 2px solid green;
+}
+
+.fix-this {
+    all: unset;
+}

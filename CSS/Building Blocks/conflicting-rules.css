@@ -1,0 +1,34 @@
+/*
+    Cascade  means that the order of CSS rules matter;
+    when two rules apply that have equal specificity 
+    the one that comes last in the CSS is the one that will be used.
+*/
+h1 {
+    color: red;
+}
+h1 {
+    color: blue;
+}
+
+/*
+    Inheritance: some CSS property values set on parent elements are inherited by their child elements, and some aren't.
+*/
+.inherit-div {
+    /*This color property will be inherited by our <p> as well*/
+    color: orange;
+}
+span {
+    color: black;
+}
+/*
+    Specificity is how the browser decides which rule applies if multiple rules have different selectors,
+    but could still apply to the same element.
+
+    An element selector is less specific as compared to class
+*/
+.main-heading {
+    color: red;
+}
+h1 {
+    color: blue;
+}
