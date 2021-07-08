@@ -10,7 +10,7 @@ h1 {
     3. Importance
 
     Source Order-
-        If multiple Rules with exactly same weight affect the same element, then the one that comes last in CSS.
+        If multiple Rules with exactly same weight affect the same element, then the one that comes last in CSS overwrites others.
 */
 .source h2 {
     color: red;
