@@ -1,0 +1,121 @@
+h1 {
+    color: darkorange;
+    text-decoration: underline;
+}
+/*
+    Cascade depends upon three factors to consider, listed here in increasing order of importance.
+    Later ones overrule earlier ones:
+    1. Source Order
+    2. Specificity
+    3. Importance
+
+    Source Order-
+        If multiple Rules with exactly same weight affect the same element, then the one that comes last in CSS.
+*/
+.source h2 {
+    color: red;
+}
+
+.source h2 {
+    color: blue;
+}
+
+/*
+    Specificity-
+        The Rule with selector of higher specificity is applied regardless of the source order
+        like- class selector have a higher specificity then element selector
+        This can be helpful in creating common rules for elements & then changing specific properties using classes or ids
+
+*/
+.specificity h2 {
+    font-size: 2em;
+    color: #000;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+.specificity .small {
+    font-size: 1em;
+}
+.specificity .bright {
+    color: rgb(31, 81, 255);
+}
+/*
+    Specificity of a selector can be calculated using four single digits in four columns in the following way:
+    1. Thousands: Add one to this column if the declaration is inside style attribute
+    2. Hundreds: Add one to this column for each id selector
+    3. Tens: Add one to this column for each class, attribute or pseudo-class selector
+    4. Ones: Add one to this column for each element or pseudo-element selector
+    Note: Universal Selector (*), Combinators(+, >, ~, '') & Negation pseudo-class (:not) have no effect on specificity
+
+    |   Selector                                |   Thousands   |   Hundreds    |   Tens    |   Ones    |   Total Specificity   |
+    |   h1                                      |       0       |       0       |     0     |     1     |         0001          |
+    |   h1 + p::first-letter                    |       0       |       0       |     0     |     3     |         0003          |
+    |   li > a[href*='en-us'] > .inline-warning |       0       |       0       |     2     |     2     |         0022          |
+    |   #identifier                             |       0       |       1       |     0     |     0     |         0100          |
+    |   No Selector, with rules in style attr   |       1       |       0       |     0     |     0     |         1000          |
+
+*/
+/*Specificity = 0111*/
+.specificity-example #outer a {
+    background-color: red;
+}
+/*Specificity = 0211*/
+.specificity-example #outer #inner a {
+    background-color: blue;
+}
+/*Specificity = 0114*/
+.specificity-example #outer div ul li a {
+    color: yellow;
+}
+/*Specificity = 0123*/
+.specificity-example #outer div ul .nav a {
+    color: white;
+}
+/*Specificity = 0034*/
+.specificity-example div div li:nth-child(2) a:hover {
+    border: 10px solid black;
+}
+/*Specificity = 0033*/
+.specificity-example div li:nth-child(2) a:hover {
+    border: 10px dashed black;
+}
+/*Specificity = 0043*/
+.specificity-example div div .nav:nth-child(2) a:hover {
+    border: 10px double black;
+}
+/*Specificity = 0011*/
+.specificity-example a {
+    display: inline-block;
+    line-height: 40px;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+    width: 200px;
+    margin-bottom: 10px;
+}
+/*Specificity = 0011*/
+.specificity-example ul {
+    padding: 0;
+}
+/*Specificity = 0011*/
+.specificity-example li {
+    list-style-type: none;
+}
+
+/*
+    Importance i.e. !important
+    This is a special piece of CSS that can be used to overrule all of the Order & Specificity Rules.
+*/
+
+#winning {
+    background-color: red;
+    border: 1px solid black;
+}
+.better {
+    background-color: gray;
+    border: none !important;
+}
+p {
+    background-color: blue;
+    color: white;
+    padding: 5px;
+}

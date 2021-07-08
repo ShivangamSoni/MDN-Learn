@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="cascade.css">
+        <title>Cascade</title>
+    </head>
+    <body>
+        <h1>Source Order</h1>
+        <div class="source">
+            <h2>Heading Color will be Blue since the last affecting CSS Rule sets it to Blue</h2>
+        </div>
+
+        <br>
+
+        <h1>Specificity</h1>
+        <div class="specificity">
+            <h2>Default Heading</h2>
+            <h2 class="small">Heading with small Class</h2>
+            <h2 class="bright">Heading with bright Class</h2>
+        </div>
+
+        <div class="specificity-example">
+            <div id="outer" class="container">
+                <div id="inner" class="container">
+                    <ul>
+                        <li class="nav"><a href="#">One</a></li>
+                        <li class="nav"><a href="#">Two</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <h1>Importance</h1>
+        <div class="importance">
+            <p class="better">
+                This is a paragraph.
+            </p>
+            
+            <p class="better" id="winning">
+                One selector to rule them all!
+            </p>
+        </div>
+    </body>
+</html>
