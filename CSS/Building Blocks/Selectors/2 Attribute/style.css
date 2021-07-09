@@ -1,0 +1,53 @@
+/*
+    Attribute Presence and Value Selectors
+        Selects elements on the basis of Matching Attribute and/or Matching Attribute & Values
+    |   Selector        |                               Description                                                                                         |
+    |   [attr]          | Matches elements with the attr attribute                                                                                          |
+    |   [attr=value]    | Matches elements with an attr attribute whose value is exactly the value in selector                                              |
+    |   [attr~=value]   | Matches elements with an attr attribute whose value is exactly the value, or contains vale in its list of space separated values  |
+    |   [attr|=value]   | Matches elements with an attr attribute whose value is exactly the value, or contains vale in its list of hyphen separated values |
+*/
+.attr li[class] {
+    font-size: 200%;
+}
+
+.attr li[class="a"] {
+    background-color: yellow;
+}
+
+.attr li[class~="a"] {
+    color: red;
+}
+
+/*
+    Attribute Substring Matching Selectors
+        Selects elements on the basis of matching Value Sub-Strings
+    |   Selector        |                               Description                                             |
+    |   [attr^=value]   | Matches elements with an attr attribute whose value begins with the value             |
+    |   [attr$=value]   | Matches elements with an attr attribute whose value ends with the value               |
+    |   [attr*=value]   | Matches elements with am attr attribute whose value contains value within the string  |
+*/
+.sub li[class^="a"] {
+    font-size: 200%;
+}
+
+.sub li[class$="a"] {
+    background-color: yellow;
+}
+
+.sub li[class*="a"] {
+    color: red;
+}
+
+/*
+    Case-Insensitivity
+        By default the Attribute selectors values are Case Sensitive
+        to make it Case-Insensitive we have to use the value 'i' before closing bracket
+*/
+li[class^="a"] {
+    background-color: yellow;
+}
+
+li[class^="a" i] {
+    color: red;
+}
