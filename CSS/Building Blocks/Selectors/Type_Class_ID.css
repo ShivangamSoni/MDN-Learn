@@ -1,0 +1,68 @@
+/*
+    Asterisk (*) is known as the universal selector.
+        It selects everything inside the document or the parent element if chained together with another element.
+    
+    We can use it in the following manner ro adjust margin for all the elements
+*/
+* {
+    margin: 30px;
+}
+
+/*
+    Type selector simply selects using the Tag or ELement Name.
+*/
+h1 {
+    color: blue;
+}
+span {
+    background-color: yellow;
+}
+strong {
+    color: rebeccapurple;
+}
+em {
+    color: rebeccapurple;
+}
+
+/*
+    Class selector starts with a dot (.) character. It will select everything in the document that have the class applied.
+    We can target a specific element with the class applied. by combining both the selectors without any space in between like: E.Class.
+*/
+.highlight {
+    background-color: yellow;
+}
+h1.highlight {
+    background-color: pink;
+}
+span.highlight {
+    background-color: lightskyblue;
+}
+
+/*
+    Chaining can be done with multiple classes as well in case we want to select an element that have multiple classes applied.
+*/
+.notebox {
+    border: 4px solid #666;
+    padding: 0.5em;
+}
+
+.notebox.warning {
+    border-color: orange;
+    font-weight: bold;
+}
+
+.notebox.danger {
+    border-color: red;
+    font-weight: bold;
+}
+
+/*
+    ID Selector begins with # & is very similar to class selector on the basis of working.
+        However, ID can be used only once per page, and elements acne have only one ID value.
+*/
+#one {
+    background-color: yellow;
+}
+h1#heading {
+    color: rebeccapurple;
+}
