@@ -1,0 +1,100 @@
+/*
+    Pseudo-Class is a selector that selects elements that are in a specific state. It's like the css is adding a class to the element
+    e.g.- they are the first element of their type, or they are being hovered over by the mouse pinter.
+    These are Keywords that start with a colon (:)
+        :pseudo-class-name
+
+    Some Pseudo Classes:
+        :first-child- select the first sibling of the type. Doesn't select if only one child is present
+        :last-child- select the last sibling of the type. Doesn't select if only one child is present
+        :only-child- select only if one child of type is present in parent
+        :invalid, :valid, :required- used to select form elements as per their state like failed or successful validation or required fields
+
+    E.g.- we want the first paragraph within the article to be bold & larger
+*/
+article p:first-child {
+    font-size: 120%;
+    font-weight: bold;
+}
+/*
+    User-Action/Dynamic Pseudo Classes:
+        these pseudo-classes only apply when the user interacts with the document in someway.
+    
+    Some User-Action Pseudo-Classes:
+        :hover- this only applies if user hovers over the element using mouse pointer
+        :focus- this only applies id the user focuses the element using keyboard controls
+*/
+a:link,
+a:visited {
+    color: rebeccapurple;
+    font-weight: bold;
+}
+a:hover {
+    color: darkorange;
+    font-size: 150%;
+}
+a:focus {
+    color: chartreuse;
+    font-size: 250%;
+}
+
+/*
+    Pseudo-Elements act similar to pseudo-class but instead of class, a new element is added to the document
+    These start with a double-colon (::)
+        ::pseudo-element-name
+    
+    e.g.: We want to select the first line of the paragraph & make it bold & larger. 
+            Also, the first character of each paragraph to be Larger & different colored
+*/
+.element p::first-line {
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.element p::first-letter {
+    font-size: 200%;
+    font-weight: bolder;
+    color: crimson;
+}
+
+/*
+We can combine pseudo-classes & pseudo-Elements as per our needs
+*/
+.combo p:first-child::first-line {
+    font-size: 150%;
+    font-weight: bold;
+}
+
+/*
+    Generating Content with ::before & ::after
+        There are some Pseudo-Elements which are used along with content property to insert content using CSS
+*/
+.box::before {
+    content: "This should show before the other Content.";
+}
+/*
+    Real Use of content generation using CSS is done for adding Symbols & Icons
+*/
+.box2::after {
+    content: " ➥";
+}
+/*
+    Another use is to set the content to Empty String & then style the element & a regular HTML Element
+*/
+.box3::before {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: rebeccapurple;
+    border: 1px solid black;
+}
+
+.box3::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: plum;
+    border: 1px solid black;
+}
