@@ -1,0 +1,51 @@
+/*
+    Combinators are used to combine multiple selectors
+
+    Descendant Combinator:
+        Represented by a 'Single Space' ( ) character
+        Elements matched by the second selector are selected if they have an ancestor element matching the first selector
+    
+    In the below example we are matching <p> element which is inside an element with class of 'box'
+*/
+.box p {
+    color: red;
+}
+
+/*
+    Child Combinator:
+        Represented by a 'Greater Than or Angle Bracket' ( > ) character
+        Elements matched by the second selector are selected if they are the direct children of element matching the first selector
+    
+    In the example below we are adding a red top border to all the <li> which are direct child of an <ul>
+*/
+ul > li {
+    border-top: 5px red solid;
+}
+
+/*
+    Adjacent Sibling Conbinator:
+        Represented by a 'Plus or Addition' (+) Symbol
+        Elements matched by the second selector that are the next sibling of element of the first selector
+    
+    In the example below we are selecting the <p> which is a direct next sibling of <h2>
+*/
+h2 + p {
+    font-weight: bold;
+    background-color: #333;
+    color: #fff;
+    padding: 0.5em;
+}
+
+/*
+    General Sibling Combinator:
+        Represented by 'Tilde' (~) Symbol
+        Elements matched by the second selector that are the sibling of element of the first selector (Any Sibling Not Just Direct)
+    
+    In the example below we are selecting all <p> which are siblings of an <h3> 
+*/
+h3 ~ p {
+    font-weight: bold;
+    background-color: #333;
+    color: #fff;
+    padding: 0.5em;
+}
