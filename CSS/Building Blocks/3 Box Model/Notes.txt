@@ -1,0 +1,79 @@
+CSS creates every element as a Boxed Container
+This Box can be set to some values using the 'display' property.
+There are two types of Display values, Outer & Inner Display Type
+
+Outer Display have two types of boxes-
+    1. Block- 
+        - Box will break onto new line
+        - It will extend in the inline direction to fill the space available in container
+        - It will occupy 100% width of it's parent
+        - Padding, Margin & Border will cause other elements to be pushed away
+        - Width & height properties can be changed/used
+        - e.g.: Heading, Paragraph & Div
+    2. Inline-
+        - Box will not break onto a new line
+        - width & height properties will not apply
+        - Vertical Padding, Margin & Borders will apply but will not cause other inline boxes to move
+        - Vertical Padding, Margin & Borders will apply and will cause other inline boxes to move away
+        - e.g.: Anchor, Strong, & Span
+    
+    3.Inline-BLock-
+        -Same as a Block but inline
+
+Inner Display type sets how elements inside the box are/will be laid out.
+    By default elements inside a box are laid out in 'Normal Flow'
+    One of the Inner Display Value is flex. setting this will set the outer display as Block & inner as per flex rules.
+
+CSS Box Model-
+    It defines how different parts of a box - margin, border, padding & content work together to create a box that you can see on the page.
+    There is a standard & an alternate Box Model.
+
+Pats of a Box: In a block box we have following parts:
+    -Content Box: Area where content is displayed, it can be sized using width & height properties
+    -Padding Box: sits around content as whitespace
+    -Border Box: wraps the content & any padding
+    -Margin Box: outer most layer providing a whitespace between this box & other elements
+
+    Note: Margin does not count towards size of box as it only affects the area outside the box content. The box area stops at the border.
+
+Standard Box Model: (Default | box-sizing: content-box)
+    As per Standard/Default Box Model all three values i.e., height/width, padding & margin
+    add up, to make the box's dimensions.
+    So, in the example below the box will have a width of 410px(350+25+25+5+5) & height of 210px(150+25+25+5+5)
+
+.box {
+  width: 350px;
+  height: 150px;
+  margin: 10px;
+  padding: 25px;
+  border: 5px solid black;
+}
+
+Alternate Box Model: (box-sizing: border-box)
+    This sets the width & height as the visible width & height of the Box on the page
+    So, in this case the above example will create a box of width 350px & height 150px, with all content, padding & margins inclusive.
+    In this case the Content width is the "width - padding & margin"
+    To use the Alternate Box Modeling we have to se the 'box-sizing' property to 'border-box'
+
+Set all the elements to Alternate Model:
+    html {
+        box-sizing: border-box;
+    }
+    *,
+    *::before,
+    *::after {
+        box-sizing: inherit;
+    }
+
+Margin Collapsing:
+    Why Margins don't contribute to box size is because of collapsing & negative values
+    If margin of two boxes collide then the margin between them is set to be equal to the largest margin
+    If one is negative the amount is subtracted from other
+    If both are negative largest value is used
+
+    Elements & their descendants margin can also collapse:
+        -In such a case the margin of descendant can end up outside the Parents margin
+        -In case og -ve margin the margin is set to sum of largest +ve margin & smallest -ve(largest value) margin
+        -In case of all -ve the smallest -ve (largest value) margin is applied
+    Note: Only Top-Bottom (Vertical) Margins Collapse, Left-Right Margins Add Up
+
