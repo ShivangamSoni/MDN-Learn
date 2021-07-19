@@ -1,0 +1,99 @@
+/*
+    background is a shorthand property for many background properties like:
+        
+        background-image: used to set image using url or gradients using linear-gradient(), radial-gradient() & conic-gradient()
+        linear-gradient(direction, start color, ...., end color);
+        direction defines the direction of gradient like: to left, to right, to top right, etc or a degree value (45deg)
+        there is also repeating-linear-gradient & repeating-radial-gradient which repeats the patter after a certain interval
+        like: repeating-linear-gradient(red, blue, 20px); this will fill the box with 20px gradients
+
+        background-size: used to set the size using px, % or any other measure
+            the size values are set along x & y directions so, 10px 20px will set the image size with height 10px width 20px
+            following are the CSS values for size:
+                -cover: the browser will make the image just large enough so that it completely covers the box area while still retaining its aspect ratio.
+                        In this case, part of the image is likely to end up outside the box.
+                -contain:  the browser will make the image the right size to fit inside the box. In this case,
+                            you may end up with gaps on either side or on the top and bottom of the image, if the aspect ratio of the image is different from that of the box.
+        
+        background-repeat: sets if the image repeats or not by default it repeats in all directions
+            -no-repeat
+            -repeat-x
+            -repeat-y
+            -repeat
+        
+        background-position: sets the images position in the box. This uses a coordinate system in which top-left corner of the box is (0,0) which is default position.
+                            we can also use pre-set values like top, left, right, bottom, center, top center, etc
+                            we can also use any other measure like %, px, em, etc.
+                            background position with two values will set left & top distance, like 10px 20px will set the image 10px away from left border & 20px away from top border
+                            with the four value alternative we can set the border as well as distance from that border like: bottom 25px right 15%
+    
+    Example Below 
+*/
+.box {
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+}
+
+.image-no-repeat {
+    background-image: url(./images/index.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.image-cover {
+    background-image: url(./images/index.jpeg);
+    background-size: cover;
+}
+
+.star {
+    background-image: url(./images/star.png);
+}
+
+.linear-gradient {
+    background-image: linear-gradient(
+        to top right,
+        violet,
+        indigo,
+        blue,
+        green,
+        yellow,
+        orange,
+        red
+    );
+}
+
+.radial-gradient {
+    background-image: radial-gradient(
+        violet,
+        indigo,
+        blue,
+        green,
+        yellow,
+        orange,
+        red
+    );
+}
+
+/*
+    We can set multiple values for each property.
+    Every value will be paired with the other properties value in the same position
+    If number of values differ them the values repeat in a cycle
+*/
+.multi-value {
+    background-image: url(./images/star.png), url(./images/star2.png),
+        url(./images/star.png), url(./images/star2.png);
+    background-position: left, top, right, bottom;
+    background-repeat: repeat-y, repeat-x;
+    background-size: 20px, 10px;
+}
+/*
+    We can set multiple background value using background property by separating them using comma.
+    Every individual property will have its value separated using space & background-position & size separated by '/'
+*/
+.shorthand {
+    background: url(./images/star.png) center no-repeat,
+        linear-gradient(to bottom right, purple 40%, black 96%) center center /
+            80% 80% no-repeat,
+        rebeccapurple;
+}
