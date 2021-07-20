@@ -1,0 +1,78 @@
+/*
+    By default Text Direction in a html document is Left-to-Right
+    We can change the direction of text to Horizontal or Vertical using the 'writing-mode' property
+        -horizontal-tb: Top-to-Bottom block flow direction. Sentences run Horizontally. (default)
+        -vertical-rl: Right-to-Left block flow direction. Sentences run Vertically
+        -vertical-lr: Left-to-Right block flow direction. Sentences run Vertically
+
+        Here, the Horizontal & vertical defines the Inline Direction i.e. the direction in which inline elements are added
+        the tb, rl & lr defines the Block Direction i.e. the direction in which block elements are added
+*/
+#vertical-heading {
+    writing-mode: vertical-lr;
+}
+
+#horizontal-tb {
+    writing-mode: vertical-rl;
+}
+/*
+    In horizontal/default mode box width runs along Inline Direction & height runs along Block Direction
+    To make it work in the similar way while using vertical Modes CSS have mapped Physical properties with new logical properties:
+    width becomes inline-size & height becomes block-size
+
+    Similar to size padding, border & margin properties also have mapped logical properties:
+    border-top = border-block-start
+    border-right = border-inline-end
+    border-bottom = border-block-end
+    border-left = border-inline-start
+
+    Basically, Directions become:
+    Top = block-start
+    Right = inline-end
+    Bottom = block-end
+    Left = inline-start
+*/
+.box {
+    inline-size: 150px;
+    border: 1px solid lightgray;
+}
+
+.horizontal {
+    writing-mode: horizontal-tb;
+}
+
+.vertical {
+    writing-mode: vertical-rl;
+}
+
+/*
+    Vertical vs Physical
+*/
+.box2 {
+    inline-size: 200px;
+    writing-mode: vertical-rl;
+}
+
+.logical {
+    margin-block-start: 20px;
+    padding-inline-end: 2em;
+    padding-block-start: 2px;
+    border-block-start: 5px solid pink;
+    border-inline-end: 10px dotted rebeccapurple;
+    border-block-end: 1em double orange;
+    border-inline-start: 1px solid black;
+}
+
+.physical {
+    margin-top: 20px;
+    padding-right: 2em;
+    padding-top: 2px;
+    border-top: 5px solid pink;
+    border-right: 10px dotted rebeccapurple;
+    border-bottom: 1em double orange;
+    border-left: 1px solid black;
+}
+
+h2 {
+    border-block-end: 5px solid black;
+}
