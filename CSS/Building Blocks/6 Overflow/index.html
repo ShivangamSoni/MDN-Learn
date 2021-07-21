@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <title>Overflow</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Overflow</h1>
+        <div class="box overflow-height">
+            This box has a height and a width. This means that if there is too much content to be displayed within the assigned height, there will be an overflow situation. If overflow is set to hidden then any overflow will not be visible.
+        </div>
+        <p>This is Another Content outside the Box.</p>
+        <br><br>
+        <div class="box overflow-width">
+            Overflow
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <h1>Overflow Hidden</h1>
+        <div class="box overflow-height overflow-hidden">
+            This box has a height and a width. This means that if there is too much content to be displayed within the assigned height, there will be an overflow situation. If overflow is set to hidden then any overflow will not be visible.
+        </div>
+        <p>This is Another Content outside the Box.</p>
+        <div class="box overflow-width overflow-hidden">
+            Overflow
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <h1>Overflow Scroll</h1>
+        <div class="box overflow-height overflow-scroll">
+            This box has a height and a width. This means that if there is too much content to be displayed within the assigned height, there will be an overflow situation. If overflow is set to hidden then any overflow will not be visible.
+        </div>
+        <p>This is Another Content outside the Box.</p>
+        <div class="box overflow-width overflow-scroll">
+            Overflow
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <h1>Overflow X & Y Scroll</h1>
+        <div class="box overflow-height overflow-scroll-y">
+            This box has a height and a width. This means that if there is too much content to be displayed within the assigned height, there will be an overflow situation. If overflow is set to hidden then any overflow will not be visible.
+        </div>
+        <p>This is Another Content outside the Box.</p>
+        <div class="box overflow-width overflow-scroll-x">
+            Overflow
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <h1>Overflow Wrap</h1>
+        <div class="box overflow-width overflow-wrap">
+            Overflow
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <h1>Overflow Auto</h1>
+        <div class="box overflow-height overflow-auto" contenteditable>
+            <b>This is a editable Box.</b> This box has a height and a width. This means that if there is too much content to be displayed within the assigned height, there will be an overflow situation. If overflow is set to hidden then any overflow will not be visible.
+        </div>
+        <p>This is Another Content outside the Box.</p>
+        <div class="box overflow-width overflow-auto">
+            Overflow
+        </div>
+    </div>
+</body>
+</html>

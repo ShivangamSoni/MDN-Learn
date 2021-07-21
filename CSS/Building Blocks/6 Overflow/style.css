@@ -1,0 +1,67 @@
+.wrapper {
+    border: 5px solid rebeccapurple;
+    margin: 25px;
+    padding: 15px;
+}
+.box {
+    border: 2px solid black;
+    margin: 20px 0;
+}
+
+/*
+    Overflow happens when there is too much content to fit in the box.
+    Overflow is caused when we try to restrict the box with width & height (inline-size & block-size) properties 
+    By default CSS shows the overflow resulting in overlapped content
+*/
+.overflow-height {
+    width: 200px;
+    height: 100px;
+}
+
+.overflow-width {
+    width: 100px;
+    font-size: 250%;
+}
+
+/*
+    we cam use 'overflow' property to take control of the elements overflow.
+    default value is 'visible' 
+        -'hidden' is used to crop the content when it overflows. This can make some of the content invisible
+        -'scroll' show scroll-bars around the box so the content is not lost/invisible, user can ise the scroll to see all the content.
+            The scroll-bars are added regardless of contents size i.e., with overflow: scroll property the scroll-bars will be visible even if the content is fitting inside the box
+
+*/
+.overflow-hidden {
+    overflow: hidden;
+}
+.overflow-scroll {
+    overflow: scroll;
+}
+
+/*
+    overflow is the shorthand for overflow-x & overflow-y
+    using these separate properties we can set overflow for horizontal & vertical directions
+    we can also specify both the properties using overflow by providing two values
+        first value sets for overflow-x & second for overflow-y
+*/
+.overflow-scroll-y {
+    overflow-y: scroll;
+}
+.overflow-scroll-x {
+    overflow-x: scroll;
+}
+
+/*
+    overflow-wrap is used to break the word to prevent overflow
+*/
+.overflow-wrap {
+    overflow-wrap: break-word;
+}
+
+/*
+    As scroll-bars are always visible, we can use the overflow: auto; value
+    with auto value the browser determines if it should display a scrollbar
+*/
+.overflow-auto {
+    overflow: auto;
+}
