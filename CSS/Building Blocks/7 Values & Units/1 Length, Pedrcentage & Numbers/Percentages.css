@@ -1,0 +1,30 @@
+/*
+    The Percentage is always set relative to some other value.
+    e.g.: an elements font-size as a percentage will be a percentage of the parents font-size
+            an elements width as a percentage will be a percentage of the parents width
+*/
+.box {
+    border: 5px solid darkblue;
+    margin: 20px;
+}
+
+.wrapper {
+    border: 5px rebeccapurple solid;
+    width: 500px;
+}
+
+.px {
+    width: 200px;
+}
+
+.percent {
+    width: 40%;
+}
+
+/*
+     Each <li> has a font-size of 80%, therefore the nested list items become progressively smaller 
+     as they inherit their sizing from their parent.
+*/
+li {
+    font-size: 80%;
+}

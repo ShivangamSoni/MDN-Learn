@@ -1,0 +1,16 @@
+/*
+    Some values accept numbers without any unit
+    like the opacity property accepts any number between 0(fully transparent) & 1(fully opaque)
+*/
+html {
+    background: darkorange;
+    font-size: 42px;
+}
+
+.box {
+    border: 5px solid darkblue;
+    margin: 100px;
+    padding: 25px;
+    background-color: lightblue;
+    opacity: 0.5;
+}
