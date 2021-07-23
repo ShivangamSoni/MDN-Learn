@@ -1,0 +1,113 @@
+/*
+    We can use Color Names, HexCodes, rgb(), rgba(), hsl() & hsla() to set the color
+*/
+.wrapper {
+    margin: 30px;
+    border: 5px solid darkblue;
+    background-color: lightblue;
+}
+.box {
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.one-name {
+    background-color: royalblue;
+}
+
+.two-name {
+    background-color: palevioletred;
+}
+
+.three-name {
+    background-color: teal;
+}
+
+/*
+    HexCode uses a Hexadecimal code to represent shades to RED GREEN & BLUE
+    first two value for RED, next two for GREEN & last two for BLUE.
+    
+    we can also add an additional set of values to adjust the Transparency of the color
+        Here, FF means 100% Opaque & 00 Means 100% Transparent
+*/
+.one-hex {
+    background-color: #4169e1;
+}
+
+.two-hex {
+    background-color: #d87093;
+}
+
+.three-hex {
+    background-color: #128a7d;
+}
+
+/*
+    Similar to HexCode RGB function sets shades of RED GREEN & BLUE
+    using values between 0 & 255, both inclusive.
+*/
+.one-rgb {
+    background-color: rgb(65, 105, 225);
+}
+
+.two-rgb {
+    background-color: rgb(216, 112, 147);
+}
+
+.three-rgb {
+    background-color: rgb(18, 138, 125);
+}
+
+/*
+    A in rgba() means Aplha or the Transparency of the Color
+    Now, the rgb & rgba functions are implemented similarly in every browser
+    so, both the functions can work with three & four values without any differences in the result
+*/
+.one-rgba {
+    background-color: rgba(65, 105, 225, 0.5);
+}
+
+.two-rgba {
+    background-color: rgba(216, 112, 147, 0.5);
+}
+
+.three-rgba {
+    background-color: rgba(18, 138, 125, 0.5);
+}
+
+/*
+    hsl() uses the Hue, Saturation & Lightness to distinguish the colors
+        Hue: The base shade of the color. This takes a value between 0 and 360, representing the angles around a color wheel.
+        Saturation: How saturated is the color? This takes a value from 0–100%, where 0 is no color (it will appear as a shade of grey), and 100% is full color saturation
+        Lightness: How light or bright is the color? This takes a value from 0–100%, where 0 is no light (it will appear completely black) and 100% is full light (it will appear completely white)
+*/
+.one-hsl {
+    background-color: hsl(225, 73%, 57%);
+}
+
+.two-hsl {
+    background-color: hsl(340, 57%, 64%);
+}
+
+.three-hsl {
+    background-color: hsl(174, 77%, 31%);
+}
+
+/*
+    A in hsla() means Aplha or the Transparency of the Color
+    Now, the hsl & hsla functions are implemented similarly in every browser
+    so, both the functions can work with three & four values without any differences in the result
+*/
+.one-hsla {
+    background-color: hsla(225, 73%, 57%, 0.5);
+}
+
+.two-hsla {
+    background-color: hsla(340, 57%, 64%, 0.5);
+}
+
+.three-hsla {
+    background-color: hsla(174, 77%, 31%, 0.5);
+}
