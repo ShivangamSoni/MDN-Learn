@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Font & Text Layout</title>
+
+        <style>
+            /*
+                FONT: Properties related to font like color, size, style, etc.
+                color sets the color of text
+
+                font-family applies the specified font
+
+                font-size sets size of font
+
+                font-style: used to turn italic text on or off
+                        Values: normal, italic & oblique
+                
+                font-weight: sets how bold the text is
+                        Values: normal, bold, bolder, lighter, 100-900 (Numeric value scan be used for a finer control aver boldness)
+                
+                text-transform: allows you to set your font to be transformed
+                        Values: none, uppercase, lowercase, capitalize, full-width (transforms all glyphs to be written inside a fixed-width square, similar to a monospace font, allowing aligning of, e.g., Latin characters along with Asian language glyphs)
+                
+                text-decoration: sets or un-sets text-decoration on fonts
+                        Values: none, underline, overline, line-through
+                    text-decoration can take multiple values like: text-decoration: underline overline solid red; text-decoration: underline line-through double blue;
+                    text-decoration is a shorthand for:
+                        text-decoration-line
+                        text-decoration-style: solid, double, dotted, dashed, wavy
+                        text-decoration-color
+
+                text-shadow: drop shadows to your text
+                    It take upto 4 values like, text-shadow: 2px 3px 5px blue;
+                    -Horizontal Offset(X-axis): +ve values move the shadow Right & -ve towards left. This value is required
+                    -Vertical Offset(Y-axis): +ve moves down & -ve moves up. This value is also requires
+                    -Blur Radius: higher the radius more widely the shadow is dispersed. id no value given it defaults to 0, which means no blur
+                    -Color: base color of shadow. if not given it defaults to color property of the element
+
+                    We can also add multiple shadows by separating each shadow values using comma like,
+                    text-shadow: 4px 4px 1px blue, -4px -4px 2px red;
+
+                
+                TEXT LAYOUT: properties that affect spacing & other layout features
+                text-align: used to control how text is aligned within its containing content box
+                        Values: left, right, center, justify (justify can make the text look weird if there are a lot of long words so, we can use hyphens property to break long words e.g.- hyphens: auto or manual)
+                
+                line-height: set the height of each line.
+                        Values: It can take most lengths & size units but mostly we use unitless values
+                                unitless vales basically multiply the current line-height & font-size to adjust
+                                recommended line-height is around 1.5-2 (double spaced)
+                
+                letter-spacing: sets spacing between letters
+                        Values: most length & size units
+                
+                word-spacing: sets spacing between words
+                        Values: most length & size units
+                
+                
+            */
+
+            html {
+                /*
+                    Child Elements inherit the font-size, hence almost all text elements that don't have any special default styling default to it's parents size
+                        Default size to html document is 16px
+                        mostly we use px, em & rem to set font-size
+                        To have easier calculations of rem we can set the html font-size to 10px
+                        so now if I want to set the font size of p to 22px I can just use the calculation 22/10 = 2.2 & set the  size to 2.2rem
+                */
+                font-size: 10px;
+            }
+
+            h1 {
+                font-size: 5rem;
+                text-transform: uppercase;
+                text-shadow: 1px 1px 1px red, 2px 2px 1px red;
+                text-align: center;
+            }
+
+            h1 + p {
+                font-weight: bold;
+            }
+
+            p {
+                font-size: 1.5rem;
+
+                color: red;
+
+                line-height: 1.6;
+
+                /*
+                    Font-Family apply the specified font if it's available on the Users Machine
+                    else it falls back to browser default
+
+                    Some Web-Safe Fonts that are available on almost every OS are
+                        -Arial (san-serif)
+                        -Courier New (monospace)
+                        -Georgia (serif)
+                        -Times New Roman (serif)
+                        -Trebuchet MS (san-serif)
+                        -Verdana (san-serif)
+                    
+                    Default Fonts: CSS defines five generic names for fonts. These are very generic & font-faces used for them varies between Browsers & OS
+                                    The browser tries it's best to provide a font that looks appropriate. 
+                        -serif: Fonts that have serifs (the flourishes and other small details you see at the ends of the strokes in some typefaces)
+                        -san-serif: Fonts that don't have serifs
+                        -monospace: Fonts where every character has some width, typically used in code listings
+                        -cursive: Fonts that are intended to emulate handwriting, with flowing, connected strokes.
+                        -fantasy: Fonts that are intended to be decorative
+
+                        serif, san-serif & monospace are safe to use & in most browsers it provide predictable results
+                        whereas, cursive & fantasy are less predictable & can provide extremely varied results depending upon OS & Browser
+
+                    Font-Stacks: Since we can't guarantee the availability of the fonts, we can supply a font-stack so that the browser has multiple fonts it can choose from
+                                    this is done by providing multiple font-names & generic types in font-family by separating them using commas
+                                font-family: "Trebuchet MS", Verdana, san-serif;
+                                In the example above if Trebuchet MS is not available then Verdana is uses,
+                                                     if Verdana is also not available then the browser will use its default sans-serif font.
+                */
+                font-family: Helvetica, Arial, sans-serif;
+            }
+
+            p::first-line {
+                letter-spacing: 4px;
+                word-spacing: 4px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Tommy the cat</h1>
+
+        <p>Well I remember it as though it were a meal ago...</p>
+
+        <p>
+            Said Tommy the Cat as he reeled back to clear whatever foreign matter may have nestled its way into his mighty throat. Many a fat alley
+            rat had met its demise while staring point blank down the cavernous barrel of this awesome prowling machine. Truly a wonder of nature this
+            urban predator — Tommy the cat had many a story to tell. But it was a rare occasion such as this that he did.
+        </p>
+    </body>
+</html>
