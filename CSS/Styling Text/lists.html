@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>List Styling</title>
+
+        <style>
+            /*
+                Three properties that are common for <ul> & <ol>
+                    line-style-type: sets type of bullets for list.
+                    line-style-position: sets wether the bullets , at the start of each item, appears inside or outside the lists.
+                    list-style-image: allows to use custom image for bullet rather than a siple square or circle.
+                For the above three properties we have the short hand list-style;
+
+                To change the starting number of list items we have options in both html & css
+                    HTML: "start" attribute can be used to set which number the list starts with
+                          "reversed" attribute can be enabled to reverse the count
+                          "value" attribute can be used with list items to set their specific number
+                    
+            */
+
+            /* General Styles */
+            html {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 10px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            ul,
+            ol,
+            dl,
+            p {
+                font-size: 1.5rem;
+            }
+
+            li,
+            p {
+                line-height: 1.5;
+            }
+
+            /* Description List Styles*/
+            dd,
+            dt {
+                line-height: 1.5;
+            }
+
+            dt {
+                font-weight: bold;
+            }
+
+            ol {
+                list-style-type: upper-roman;
+                list-style-position: inside;
+            }
+
+            ul {
+                /*
+                This property is limited in terms of controlling the position, size, etc of the bullwt
+                Hence, we can use background properties to do the job.
+                list-style-image: url("./star.svg");
+                */
+                padding-left: 2rem;
+                list-style-type: none;
+            }
+            ul li {
+                padding-left: 2rem;
+                background-image: url("./star.svg");
+                background-position: 0 0;
+                background-size: 1.6rem 1.6rem;
+                background-repeat: no-repeat;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Shopping (unordered) list</h2>
+        <p>
+            Paragraph for reference, paragraph for reference, paragraph for reference, paragraph for reference, paragraph for reference, paragraph for
+            reference.
+        </p>
+        <ul>
+            <li>Humous</li>
+            <li>Pitta</li>
+            <li>Green salad</li>
+            <li>Halloumi</li>
+        </ul>
+
+        <h2>Recipe (ordered) list</h2>
+        <p>
+            Paragraph for reference, paragraph for reference, paragraph for reference, paragraph for reference, paragraph for reference, paragraph for
+            reference.
+        </p>
+        <ol>
+            <li>Toast pitta, leave to cool, then slice down the edge.</li>
+            <li>Fry the halloumi in a shallow, non-stick pan, until browned on both sides.</li>
+            <li>Wash and chop the salad</li>
+            <li>Fill Pitta with salad, humous, and fried halloumi.</li>
+        </ol>
+
+        <h2>Ingredient description list</h2>
+        <p>
+            Paragraph for reference, paragraph for reference, paragraph for reference, paragraph for reference, paragraph for reference, paragraph for
+            reference.
+        </p>
+        <dl>
+            <dt>Humous</dt>
+            <dd>A thick dip/sauce generally made from chick peas blended with tahini, lemon juice, salt, garlic, and other ingredients.</dd>
+
+            <dt>Pitta</dt>
+            <dd>A soft, slightly leavened flatbread.</dd>
+
+            <dt>Halloumi</dt>
+            <dd>A semi-hard, unripened, brined cheese with a higher-than-usual melting point, usually made from goat/sheep milk.</dd>
+
+            <dt>Green salad</dt>
+            <dd>That green healthy stuff that many of us just use to garnish kebabs.</dd>
+        </dl>
+    </body>
+</html>
