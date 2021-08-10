@@ -22,6 +22,9 @@
                 Any text styling & common styling properties can be used with links.
                 The recommended way to style a link to make it distinct from regular text & keep the common styling
                 like- underline, hover effect, different color, etc.
+
+                A common practice is to include icons on link to provide more of an indicator to what kind of content the link points to.
+                for example an link to external site
             */
             html {
                 width: 300px;
@@ -61,6 +64,14 @@
             a:active {
                 background: #265301;
                 color: #cdfeaa;
+            }
+
+            a[href*="#"] {
+                background-image: url(./external.svg);
+                background-repeat: no-repeat;
+                background-position: 100% 0; /*100% from left*/
+                background-size: 12px 12px;
+                padding-right: 12px;
             }
         </style>
     </head>
