@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Link Styling</title>
+
+        <style>
+            /*
+                Link States:
+                    :link- link which has a destination (not just a named anchor)
+                    :visited- link that has already been visited (exists in browser history)
+                    :hover- link that is hovered over by a user's mouse pointer
+                    :focus- link that is focused (moved to by a keyboard using Tab key or programmatically focused using HTMLElement.focus())
+                    :active- link that is activated (clicked on)
+
+                It's important to style links in this specific order as the link styles build on one another
+                like the styles in first rule-set applies to all the others. when a link is active its also hovered over.
+                So, the order to follow is: Link, Visited, Focus, Hover, Active ('L'o'V'e 'F'ear 'H''A'te)
+
+                Any text styling & common styling properties can be used with links.
+                The recommended way to style a link to make it distinct from regular text & keep the common styling
+                like- underline, hover effect, different color, etc.
+            */
+            html {
+                width: 300px;
+                margin: 0 auto;
+                font-size: 1.2rem;
+                font-family: sans-serif;
+            }
+
+            p {
+                line-height: 1.4;
+            }
+
+            a {
+                outline: none;
+                text-decoration: none;
+                padding: 2px 1px 0;
+            }
+
+            a:link {
+                color: #265301;
+            }
+
+            a:visited {
+                color: #437a16;
+            }
+
+            a:focus {
+                border-bottom: 1px solid;
+                background: #bae498;
+            }
+
+            a:hover {
+                border-bottom: 1px solid;
+                background: #cdfeaa;
+            }
+
+            a:active {
+                background: #265301;
+                color: #cdfeaa;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            There are several browsers available, such as <a href="#">Mozilla Firefox</a>, <a href="#">Google Chrome</a>, and
+            <a href="#">Microsoft Edge</a>.
+        </p>
+    </body>
+</html>
