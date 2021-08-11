@@ -1,0 +1,163 @@
+/* General setup */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    min-width: 1000px;
+    max-width: 1400px;
+}
+
+/* Layout */
+
+section {
+    float: left;
+    width: 50%;
+}
+
+aside {
+    float: left;
+    width: 30%;
+}
+
+nav {
+    float: left;
+    width: 20%;
+}
+
+footer {
+    clear: both;
+}
+
+header,
+section,
+aside,
+nav,
+footer {
+    padding: 20px;
+}
+
+/* header and footer */
+
+header,
+footer {
+    border-top: 5px solid #a66;
+    border-bottom: 5px solid #a66;
+}
+
+/* Assessment Styling */
+/* Fonts */
+@font-face {
+    font-family: "heading";
+    src: url("./fonts/cream_cake-webfont.woff2") format("woff2"), url("./fonts/cream_cake-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "body";
+    src: url("./fonts/comfortaa-regular-webfont.woff2") format("woff2"), url("./fonts/comfortaa-regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Typography */
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: "body";
+    font-size: 2rem;
+    line-height: 1.5;
+}
+
+h1,
+h2 {
+    font-family: "heading";
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 7rem;
+}
+
+h2 {
+    font-size: 5rem;
+}
+
+header h1 {
+    text-align: center;
+}
+
+p,
+ul,
+ol {
+    letter-spacing: 1.5px;
+    word-spacing: 3px;
+}
+
+section h2 + p {
+    text-indent: 60px;
+}
+
+/* Links */
+a {
+    outline: none;
+    padding: 1px 2px 0;
+}
+
+a[href*="http"] {
+    padding-right: 11px;
+    background-image: url(./images/external.svg);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 10px 10px;
+}
+
+a:link {
+    color: rgb(135, 75, 170);
+}
+
+a:visited {
+    color: rgb(93, 190, 80);
+}
+
+a:focus,
+a:hover {
+    color: rgb(156, 24, 24);
+    text-decoration: none;
+}
+
+a:active {
+    color: rgb(33, 24, 156);
+    font-size: 110%;
+}
+
+/* Navigation Bar */
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li a {
+    outline: 1px solid #a66;
+    text-decoration: none;
+    display: inline-block;
+    width: 110%;
+    margin-bottom: 10%;
+    padding: 5% 10%;
+    text-align: center;
+    line-height: 3;
+}
+
+nav ul li a:link,
+nav ul li a:visited {
+    color: rgb(135, 75, 170);
+}
+
+nav ul li a:focus,
+nav ul li a:hover,
+nav ul li a:active {
+    font-size: 120%;
+}
