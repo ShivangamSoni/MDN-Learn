@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>GRID</title>
+        <style>
+            body {
+                width: 90%;
+                max-width: 900px;
+                margin: 2em auto;
+                font: 0.9em/1.2 Arial, Helvetica, sans-serif;
+            }
+
+            .container > div {
+                border-radius: 5px;
+                padding: 10px;
+                background-color: rgb(207, 232, 220);
+                border: 2px solid rgb(79, 185, 227);
+            }
+
+            /*
+                Grid Layout is a two-dimensional layout system for the web.
+                It lets you lay content out in rows and columns, and has many features that make building complex layouts straightforward.
+                By default Grid gives us a single column grid hence the items are displayed one below the other
+
+                grid-template-columns: this adds the columns to our grid layout
+                    Values: length, percentage & fr units(fr represents fractional part of the available space)
+                    we can also repeat the track listing using repeat(n, track-size)
+                gap: is used to set the space between rows & columns
+                    its a shorthand for column-gap & row-gap properties
+
+                (Explicit Grid) We can create the tracks using grid-template-column and grid-template-row property
+                (Implicit Grid) the rows however are being created automatically to adjust the contents of html
+                we can adjust the size of implicit rows & columns using following properties:
+                    grid-auto-rows, grid-auto-column
+                minmax(min-val, max-val) function can be used as a value for grid-auto-row & column, as a static value is not of much help as the contents will overflow
+                    e.g.- minmax(100px, auto); this will set the minimum size to 100px & the elements will scale automatically as per their contents
+
+                we can combine repeat() & minmax() to create a auto-fill template
+            */
+            /* GRID Code */
+            .container {
+                display: grid;
+                /*
+                3 columns 200px  each
+                grid-template-columns: 200px 200px 200px;
+
+                3 columns in fraction
+                grid-template-columns: 1fr 2fr 1fr;
+
+                3 column using repeat function
+                grid-template-columns: repeat(3, 1fr);
+
+                implicit row size set to 100px
+                grid-auto-rows: 100px;
+
+                implicit row size set to minimum 100px & auto scalable
+                grid-auto-rows: minmax(100px, auto);
+
+                auto-filling template
+                */
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                grid-auto-rows: minmax(100px, auto);
+                gap: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Simple grid example</h1>
+
+        <div class="container">
+            <div>One</div>
+            <div>Two</div>
+            <div>Three</div>
+            <div>Four</div>
+            <div>Five</div>
+            <div>Six</div>
+            <div>Seven</div>
+        </div>
+    </body>
+</html>
