@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Position</title>
+        <style>
+            body {
+                width: 500px;
+                margin: 0 auto;
+            }
+            p {
+                background: aqua;
+                border: 3px solid blue;
+                padding: 10px;
+                margin: 10px;
+            }
+            span {
+                background: red;
+                border: 1px solid black;
+            }
+            /*
+                absolute: it takes the element out of normal flow isolated in a layer above everything else
+                            in this case the top, right, bottom & left properties are applied in relation to the "containing element"
+                        This is very useful: it means that we can create isolated UI features that don't interfere with the layout of other elements on the page.
+                        For example, popup information boxes, control menus, rollover panels, UI features that can be dragged and dropped anywhere on the page, and so on.
+            */
+            .positioned {
+                background-color: orange;
+                position: absolute;
+                top: 30px;
+                left: 30px;
+            }
+            /*
+                Positioning Context: The containing element is dependent on position property of ancestor elements
+                                    If none of the ancestors are positioned explicitly the containing element keeps on falling back until it reaches the "Initial Containing Block".
+                                        The Initial Containing Block has the dimensions of viewport & is the one that contains <html> element so the absolute element in this case is displayed outside the html element itself
+                                    
+                                    We can change the positioning context by giving one of the ancestors a position of relative which will make the element positioned according to that parent's flow & dimension
+            */
+            body {
+                position: relative;
+            }
+            /*
+                Position Order means which element appears on top of other
+                    Default Rules:
+                        -Positioned elements win over the non-positioned elements
+                        -Positioned elements that come later in "html source order" win over the earlier positioned elements
+                We can change the position order using z-index property
+                z-index: is the third/imaginary axis on a webpage that runs from the screen towards us
+                        +ve values move the elements higher up the stack & -ve values move them down
+                        By default positioned elements have the z-index value of auto which is effectively 0
+            */
+            p:nth-of-type(1) {
+                position: absolute;
+                background-color: lime;
+                top: 10px;
+                right: 30px;
+                z-index: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Basic Document Flow</h1>
+        <p>I am a basic block level element. My adjacent block level elements sit on new lines below me.</p>
+
+        <p class="positioned">
+            By default we span 100% of the width of our parent element, and our height is as tall as our child content. Our total width and height is
+            our content + padding + border width/height.
+        </p>
+
+        <p>We are separated by our margins. Because of margin collapsing, we are separated by the width of one of our margins, not both.</p>
+
+        <p>
+            inline elements <span>like this one</span> and <span>this one</span> sit on the same line as one another, and adjacent text nodes, if
+            there is space on the same line. Overflowing inline elements
+            <span>wrap onto a new line if possible — like this one containing text</span>, or just go on to a new line if not, much like this image
+            will do: <img src="long.jpg" />
+        </p>
+    </body>
+</html>
