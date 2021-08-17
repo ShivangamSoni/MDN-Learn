@@ -1,0 +1,81 @@
+.box {
+    border: 3px solid dodgerblue;
+    background-color: lightskyblue;
+    height: 100px;
+    margin: 5px;
+}
+
+/*
+    Media Query is used to apply CSS Styles on the basis of Screen Type, Size, etc.
+    Syntax: @media media-type* and (media-feature-rule) {
+                CSS Rules
+            }
+    
+    Media-Type: all, print, screen, speech
+            media-type is optional if not included, it applies to all
+    
+    Media-Feature-Rules: 
+            Width & Height: min-width, max-width, width, min-height, max-height & height
+            using range of width & height using min & max is a lot more useful than just using astatic value
+*/
+@media screen and (max-width: 600px) {
+    .box1 {
+        color: #fff;
+    }
+}
+/*
+    Media-Feature-Rules:
+            Orientation: to check if the device is in portrait or landscape mode
+*/
+@media (orientation: landscape) {
+    .box2 {
+        background-color: rebeccapurple;
+    }
+}
+/*
+    Media-Feature-Rules:
+        Hover: hover checks if the user has the ability to hover, which essentially means that they are using some kind of pointing device. 
+                Touch & Keyboard navigation systems do not hover.
+        Pointer: checks the type of pointing device: none, fine & coarse
+                    fine pointer is something like a mouse or trackpad
+                    coarse pointer is our finger or stylus on a touchscreen
+                    none means the user has no pointing device, they are using keyboard or voice commands to navigate
+*/
+@media (hover: hover) {
+    .box3 {
+        background-color: bisque;
+    }
+}
+
+/*
+    Complex Media Queries:
+        using "and": we can combine multiple feature using "and" 
+*/
+@media screen and (min-width: 600px) and (orientation: landscape) {
+    .box4 {
+        background-color: plum;
+    }
+}
+/*
+    Complex Media Queries:
+        using "or": to match from a set of queries in which even if any one check matches style should apply
+                        we can separate them using commas
+*/
+@media screen and (min-width: 600px), screen and (orientation: landscape) {
+    .box5 {
+        background-color: seagreen;
+    }
+}
+/*
+    Complex Media Queries:
+        using "not": we can negate an entire media query by using the not operator
+                        This reverses the meaning of the entire media query
+        
+    Hence, this example will only apply for portrait orientation
+*/
+@media not all and (orientation: landscape) {
+    .box6 {
+        background-color: sienna;
+        color: wheat;
+    }
+}
