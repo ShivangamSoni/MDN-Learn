@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!--
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+            This meta Tag is used to tell the browser to set the view-port width equal to device width & scale the document to 100% of its intended size
+            This is required for responsive style to work on mobile devices, as most mobile devices set the view-port width to 960px
+            & show the user a zoomed-out version of the desktop site. So this meta tag is require for the responsive design to work properly
+
+            Settings for viewport meta:
+                initial-scale: Sets the initial zoom of the page, which we set to 1.
+                height: Sets a specific height for the viewport.
+                width: Sets a specific width for the viewport, which we set to device-width.
+                minimum-scale: Sets the minimum zoom level.
+                maximum-scale: Sets the maximum zoom level.
+                user-scalable: Prevents zooming if set to no.
+        -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Flexible Grids</title>
+        <style>
+            body {
+                font: 1.2em Helvetica, Arial, sans-serif;
+                margin: 20px;
+                padding: 0;
+                background-color: #eee;
+            }
+            .wrapper {
+                max-width: 960px;
+                margin: 2em auto;
+                padding: 2rem;
+            }
+            .col1,
+            .col2 {
+                background-color: #fff;
+            }
+
+            .wrapper-float {
+                background-color: crimson;
+            }
+            .wrapper-flex {
+                background-color: plum;
+            }
+            .wrapper-grid {
+                background-color: dodgerblue;
+            }
+
+            /*
+                There are many ways in which we can create Responsive/Flexible Grid Layouts
+                I'll create similar layouts using Float, Flex & Grid
+                    having two columns in a proportion of 1:2
+            */
+            /* 
+                1. Float
+                    To create flexible columns we can set the width using %,
+                    making sure that across the layout the total is not more than 100%
+            */
+            @media screen and (min-width: 600px) {
+                .wrapper-float {
+                    display: flow-root;
+                }
+                .wrapper-float .col1 {
+                    width: 31.24999999%;
+                    float: left;
+                }
+                .wrapper-float .col2 {
+                    width: 64.58333331%;
+                    float: right;
+                }
+            }
+            /*
+                2. Flexbox: 
+                    Here, we can create columns & set size using flex-grow & flex-shrink properties
+            */
+            @media screen and (min-width: 600px) {
+                .wrapper-flex {
+                    display: flex;
+                }
+                .wrapper-flex .col1 {
+                    flex: 1;
+                    margin-right: 5%;
+                }
+                .wrapper-flex .col2 {
+                    flex: 2;
+                }
+            }
+            /*
+                3. GRID:
+                    with grid it gets simpler as we just have to give the template size in grid-template-columns
+            */
+            @media screen and (min-width: 600px) {
+                .wrapper-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 2fr;
+                    grid-gap: 5%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper wrapper-float">
+            <div class="col1">
+                <p>This layout is responsive. See what happens if you make the browser window wider or narrow.</p>
+            </div>
+            <div class="col2">
+                <p>
+                    One November night in the year 1782, so the story runs, two brothers sat over their winter fire in the little French town of
+                    Annonay, watching the grey smoke-wreaths from the hearth curl up the wide chimney. Their names were Stephen and Joseph
+                    Montgolfier, they were papermakers by trade, and were noted as possessing thoughtful minds and a deep interest in all scientific
+                    knowledge and new discovery.
+                </p>
+                <p>
+                    Before that night—a memorable night, as it was to prove—hundreds of millions of people had watched the rising smoke-wreaths of
+                    their fires without drawing any special inspiration from the fact.”
+                </p>
+            </div>
+        </div>
+
+        <div class="wrapper wrapper-flex">
+            <div class="col1">
+                <p>This layout is responsive. See what happens if you make the browser window wider or narrow.</p>
+            </div>
+            <div class="col2">
+                <p>
+                    One November night in the year 1782, so the story runs, two brothers sat over their winter fire in the little French town of
+                    Annonay, watching the grey smoke-wreaths from the hearth curl up the wide chimney. Their names were Stephen and Joseph
+                    Montgolfier, they were papermakers by trade, and were noted as possessing thoughtful minds and a deep interest in all scientific
+                    knowledge and new discovery.
+                </p>
+                <p>
+                    Before that night—a memorable night, as it was to prove—hundreds of millions of people had watched the rising smoke-wreaths of
+                    their fires without drawing any special inspiration from the fact.”
+                </p>
+            </div>
+        </div>
+
+        <div class="wrapper wrapper-grid">
+            <div class="col1">
+                <p>This layout is responsive. See what happens if you make the browser window wider or narrow.</p>
+            </div>
+            <div class="col2">
+                <p>
+                    One November night in the year 1782, so the story runs, two brothers sat over their winter fire in the little French town of
+                    Annonay, watching the grey smoke-wreaths from the hearth curl up the wide chimney. Their names were Stephen and Joseph
+                    Montgolfier, they were papermakers by trade, and were noted as possessing thoughtful minds and a deep interest in all scientific
+                    knowledge and new discovery.
+                </p>
+                <p>
+                    Before that night—a memorable night, as it was to prove—hundreds of millions of people had watched the rising smoke-wreaths of
+                    their fires without drawing any special inspiration from the fact.”
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
