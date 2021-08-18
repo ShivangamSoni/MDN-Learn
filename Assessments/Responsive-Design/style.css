@@ -69,3 +69,32 @@ main {
     padding: 0.5em 1em;
     color: #fff;
 }
+
+/* Desktop */
+@media screen and (min-width: 850px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header ul {
+        display: flex;
+        justify-content: center;
+    }
+    header a {
+        border-top: none;
+    }
+
+    main {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        column-gap: 20px;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 20px;
+    }
+}
