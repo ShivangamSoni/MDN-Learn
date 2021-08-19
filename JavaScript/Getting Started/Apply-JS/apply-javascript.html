@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Apply JavaScript</title>
+
+        <!-- <script>
+            /* 
+                Internal JS: Javascript written in script tag
+                The problem with Javascript is that If the script loads before HTML then we can run into some errors
+                if the javascript is trying to access an element that is not yet displayed on the screen
+
+                To stop that from happening we have inclosed the entire code with in the following code:
+                    document.addEventListener("DOMContentLoaded", function(){ Rest of JS Code });
+                
+                "DOMContentLoaded" Event signifies that the HTML Body is completely Loaded and Parsed.
+                So, the JS Block will not run until this event is fired, therefore avoiding any errors
+            */
+            document.addEventListener("DOMContentLoaded", function () {
+                function createParagraph() {
+                    let para = document.createElement("p");
+                    para.textContent = "You Clicked a Button!";
+                    document.body.appendChild(para);
+                }
+
+                const buttons = document.querySelectorAll("button");
+
+                for (let i = 0; i < buttons.length; i++) {
+                    buttons[i].addEventListener("click", createParagraph);
+                }
+            });
+        </script> -->
+
+        <!-- 
+            External JS
+            
+            **The Old Solution to the External script loading problem was to add the scripts just before the closing body tag so that the scripts will load only after the Body
+                This solution can make a big website perform slow as the scripts will download only after entire HTML
+
+            Using Modern Features we can handle this loading problem using the 'defer' or 'async' attributes
+            This tells the browser to continue downloading the HTML content. So, both the HTML & Script are loaded simultaneously and the code works without error.
+
+            async and defer
+                Scripts loaded using the async attribute will download the script without blocking the page while the script is being fetched.
+                However, once the download is complete, the script will execute, which blocks the page from rendering.
+                You get no guarantee that scripts will run in any specific order. It is best to use async when the scripts in the page run independently from each other and depend on no other script on the page.
+
+                Scripts loaded with the defer attribute will load in the order they appear on the page.
+                They won't run until the page content has all loaded, which is useful if your scripts depend on the DOM being in place (e.g. they modify one or more elements on the page).
+         -->
+        <script src="./script.js" defer></script>
+    </head>
+    <body>
+        <a
+            href="https://html.spec.whatwg.org/images/asyncdefer.svg"
+            target="blank"
+            style="display: block; font-size: 1.2rem; padding: 10px; text-align: center"
+            >Difference in Scripts Loading & Execution</a
+        >
+        <button>Click me</button>
+        <button>Click me</button>
+        <button>Click me</button>
+        <!-- 
+            We can attach javascript directly to the element by providing am appropriate event attribute & function name as value
+            but this is not recommended practice, as in this case we have to individually write the eventListener attribute to every button
+            Whereas out JS is capable to attach itself to all the button elements automatically.
+
+            <button onclick="createParagraph()">Click me</button> 
+        -->
+    </body>
+</html>
