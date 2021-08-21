@@ -1,0 +1,52 @@
+body {
+    height: 100vh;
+    background: chocolate;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+    CSS Transitions are used to define the transition between two states of an element
+    By default transitions happen instantly.
+    Transition is controlled using four properties:
+        transition-duration: duration it will take for the transition
+        transition-property: property to apply the transition on like: background, padding, width, etc.
+                                by default transition applies to all properties or we can use "all" to apply to all
+        transition-delay: defines the amount of time before the transition starts
+        transition-timing-function: defines how the transition utilize it's time.
+                                    e.g.: linear(default): keep the transition consistent
+                                            ease-in: make the transition starts slow & pickup speed by the end
+                                            ease-out: starts fast & slows down by the end
+                                            ease-in-out: start slow, pickups speed & then ends slow
+                Timing Function doesn't affect the duration but utilize it in different ways
+                We can also write Timing-Functions manually using cubic-bezier() function, this value can be generated using websites like: https://cubic-bezier.com/
+    
+    transition property is the shorthand for above 4 properties. Written in the following order:
+        transition: transition-property | transition-duration | transition-timing-function | transition-delay
+
+        we can apply different transitions to different properties by separating each set of using commas
+            e.g.- transition: background 2000ms 5000ms, transform 5000ms 5000ms;
+
+    [Note: It is recommended to apply transition on the original state of element like .box instead of applying it of .box:hover.
+            This is because if the transition is applied on state changing selectors like :hover the transition doesn't work for the reverse i.e., hovering out]
+*/
+
+.box {
+    width: 300px;
+    height: 300px;
+    background-color: dodgerblue;
+    /*
+    transition-duration: 2000ms;
+    transition-property: transform;
+    transition-delay: 2000ms;
+    transition-timing-function: ease-in;
+    The above can be written as follows
+    */
+    transition: transform 2000ms ease-in 2000ms;
+}
+.box:hover {
+    background: crimson;
+    transform: rotate(45deg);
+}
