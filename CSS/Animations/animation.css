@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: darkslategray;
+}
+
+.parent {
+    width: 50vw;
+    height: 50vh;
+    background-color: crimson;
+    margin: 15px auto;
+    border: 5px dotted white;
+}
+
+/*
+    CSS Animation properties are used to animate html elements
+    unlike transition Animations are written inside the element where changes happen like: :hover
+    There are 8 Animation Properties:
+        animation-name: defines a name for the animation, used to activate the animation
+        animation-duration: duration for the animation to take place
+        animation-delay: time before animation starts
+        animation-timing-function: defines how the animation utilize its time using a special presets like: ease-in, ease-out, etc or the cubic-bezier() function.
+        animation-fill-mode: defines what vales are applied before & after the animation duration
+                    By default after completion of the animation the element comes back to it's initial/default state
+                    backwards: The animation applies all the properties of 0% @keyFrame rule before animation starts (during delay)
+                    forwards: The animation stays at the 100% @keyFrame rule (after ending)
+                    both: combination of both
+        animation-iteration-count: defines the number of time san animation cycle plays
+        animation-direction: defines how the animation cycle plays
+                    normal: 0% to 100%
+                    reverse: 100% to 0%
+                    alternate: odd iteration(1, 3, 5...) play normal & even iterations(2, 4, 6...) play in reverse
+                    alternate-reverse: odd iteration(1, 3, 5...) play in reverse & even iterations(2, 4, 6...) play normal
+        animation-play-state: is used to define if the animation is running or paused. It can be used like a trigger to play or pause the animation on e.g. :hover
+    
+
+    animation property is a shorthand for all of the above properties in following format(not strict):
+        animation: duration | timing-function | delay | iteration-count | direction | fill-mode | play-state | name
+*/
+.child {
+    width: 50%;
+    height: 50%;
+    background-color: dodgerblue;
+    /*
+    animation-name: left-to-right;
+    animation-duration: 2000ms;
+    animation-delay: 2000ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+    animation-iteration-count: 3;
+    animation-direction: alternate;
+    animation-play-state: running;
+
+    Above can be Written as follow:
+    */
+    animation: left-to-right 2000ms ease-out both infinite alternate 2000ms running;
+}
+.parent:hover .child {
+    animation-play-state: paused;
+}
+
+/*
+    After defining the animation we have to call it using @keyFrame
+    within keyFrame we can define different values for the animation to occur between 0% & 100% duration of animation
+*/
+@keyframes left-to-right {
+    0% {
+        background-color: chartreuse;
+        transform: translateX(0);
+    }
+
+    33% {
+        background-color: cornflowerblue;
+        transform: translateY(100%);
+    }
+
+    66% {
+        background-color: plum;
+        transform: translateX(100%) translateY(100%);
+    }
+
+    100% {
+        background-color: darkorange;
+        transform: translateX(100%);
+    }
+}
+
+/* Rainbow Box Animation */
+.parent2 {
+    width: 50vw;
+    height: 50vh;
+    background-color: skyblue;
+    margin: 15px auto;
+    border: 5px dotted brown;
+}
+.child2 {
+    width: 50%;
+    height: 50%;
+    background-color: skyblue;
+    animation: rainbow 5000ms linear both infinite alternate running;
+}
+.parent2:hover .child2 {
+    animation-play-state: paused;
+}
+
+@keyframes rainbow {
+    0% {
+        background-color: dimgray;
+    }
+
+    15% {
+        background-color: red;
+    }
+
+    30% {
+        background-color: orange;
+        transform: translateY(100%);
+    }
+
+    45% {
+        background-color: yellow;
+    }
+
+    60% {
+        background-color: green;
+        transform: translateX(100%) translateY(100%);
+    }
+
+    70% {
+        background-color: blue;
+    }
+
+    85% {
+        background-color: indigo;
+    }
+
+    100% {
+        background-color: violet;
+        transform: translateX(100%);
+    }
+}
