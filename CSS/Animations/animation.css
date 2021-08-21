@@ -66,6 +66,14 @@ html {
 /*
     After defining the animation we have to call it using @keyFrame
     within keyFrame we can define different values for the animation to occur between 0% & 100% duration of animation
+    apart from 0% to 100% we can also use "from" & "to" in cases where we don't have to specify middle animations
+    
+    from {
+        color: black;
+    }
+    to {
+        color: white;
+    }
 */
 @keyframes left-to-right {
     0% {
