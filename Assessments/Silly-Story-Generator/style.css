@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: helvetica, sans-serif;
+    width: 350px;
+    margin: 0;
+    padding: 0;
+    background-color: dimgray;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container {
+    background-color: #fff;
+    padding: 2rem;
+    border: 5px solid chartreuse;
+    border-radius: 2rem;
+    box-shadow: 3px 3px 7px crimson, -3px -3px 7px dodgerblue;
+}
+
+label {
+    font-weight: bold;
+}
+
+div {
+    padding-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 5px;
+    width: 150px;
+}
+
+p {
+    background: #ffc125;
+    color: #5e2612;
+    padding: 10px;
+    visibility: hidden;
+}
