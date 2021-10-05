@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+    <title>UI Pseudo-Classes</title>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>Feedback form</legend>
+        <p>Required fields are labelled with "required".</p>
+        <div>
+          <label for="fname">First name: </label>
+          <input id="fname" name="fname" type="text" required />
+          <span></span>
+        </div>
+        <div>
+          <label for="lname">Last name: </label>
+          <input id="lname" name="lname" type="text" required />
+          <span></span>
+        </div>
+        <div>
+          <label for="age">Age (must be 12+): </label>
+          <input id="age" name="age" type="number" min="12" max="120" required />
+          <span></span>
+        </div>
+        <div>
+          <label for="email">Email address (include if you want a response): </label>
+          <input id="email" name="email" type="email" />
+          <span></span>
+        </div>
+        <div><button>Submit</button></div>
+      </fieldset>
+    </form>
+
+    <form id="shipping">
+      <fieldset id="shipping">
+        <legend>Shipping address</legend>
+        <div>
+          <label for="name1">Name: </label>
+          <input id="name1" name="name1" type="text" required />
+        </div>
+        <div>
+          <label for="address1">Address: </label>
+          <input id="address1" name="address1" type="text" required />
+        </div>
+        <div>
+          <label for="pcode1">Zip/postal code: </label>
+          <input id="pcode1" name="pcode1" type="text" required />
+        </div>
+        <div>
+          <label for="country1">Country: </label>
+          <input id="country1" name="country1" type="text" required readonly value="India" />
+        </div>
+      </fieldset>
+      <fieldset id="billing">
+        <legend>Billing address</legend>
+        <div>
+          <label for="billing-checkbox">Same as shipping address:</label>
+          <input type="checkbox" id="billing-checkbox" checked />
+        </div>
+        <div>
+          <label for="name" class="billing-label disabled-label">Name: </label>
+          <input id="name" name="name" type="text" disabled required />
+        </div>
+        <div>
+          <label for="address2" class="billing-label disabled-label">Address: </label>
+          <input id="address2" name="address2" type="text" disabled required />
+        </div>
+        <div>
+          <label for="pcode2" class="billing-label disabled-label">Zip/postal code: </label>
+          <input id="pcode2" name="pcode2" type="text" disabled required />
+        </div>
+        <div>
+          <label for="country2" class="billing-label disabled-label">Country: </label>
+          <input type="text" id="country2" disabled required value="India" readonly />
+        </div>
+      </fieldset>
+
+      <div><button>Submit</button></div>
+    </form>
+
+    <form id="buttons">
+      <fieldset>
+        <legend>Favorite Fruits</legend>
+        <p>
+          <input type="radio" name="fruit" value="mango" id="mango" checked />
+          <label for="mango">Mango</label>
+          <span></span>
+        </p>
+        <p>
+          <input type="radio" name="fruit" value="cherry" id="cherry" />
+          <label for="cherry">Cherry</label>
+          <span></span>
+        </p>
+        <p>
+          <input type="radio" name="fruit" value="banana" id="banana" />
+          <label for="banana">Banana</label>
+          <span></span>
+        </p>
+      </fieldset>
+    </form>
+  </body>
+</html>

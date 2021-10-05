@@ -1,0 +1,191 @@
+/*
+  :required selects the inputs that have required attribute
+  :optional selects all elements without required attribute
+*/
+body {
+  font-family: "Josefin Sans", sans-serif;
+  margin: 20px auto;
+  max-width: 460px;
+}
+
+fieldset {
+  padding: 10px 30px 0;
+}
+
+legend {
+  color: white;
+  background: black;
+  padding: 5px 10px;
+}
+
+fieldset > div {
+  margin-bottom: 20px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+button,
+label,
+input {
+  display: block;
+  font-family: inherit;
+  font-size: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px;
+  height: 30px;
+}
+
+input {
+  box-shadow: inset 1px 1px 3px #ccc;
+  border-radius: 5px;
+}
+
+input:hover,
+input:focus {
+  background-color: #eee;
+}
+
+input + span {
+  position: relative;
+}
+
+input:required + span::after {
+  font-size: 0.7rem;
+  position: absolute;
+  content: "required";
+  color: white;
+  background-color: black;
+  padding: 5px 10px;
+  top: -26px;
+  left: -70px;
+}
+
+button {
+  width: 60%;
+  margin: 0 auto;
+}
+
+/*
+  :valid- When default validation is valid
+  :invalid: when default validation fails
+
+  Things to Keep on Mind:
+    -Controls with no constraint validation will always be valid, and therefore matched with :valid.
+    -Controls with required set on them that have no value are counted as invalid — they will be matched with :invalid and :required.
+    -Controls with built-in validation, such as <input type="email"> or <input type="url"> are (matched with) :invalid when the data entered into them does not match the pattern they are looking for (but they are valid when empty).
+    -Controls whose current value is outside the range limits specified by the min and max attributes are (matched with) :invalid, but also matched by :out-of-range.
+    -There are some other ways to make an element matched by :valid/:invalid. Like using JS
+*/
+input + span {
+  position: relative;
+}
+
+input + span::before {
+  position: absolute;
+  right: -20px;
+  top: 5px;
+}
+
+input:invalid {
+  border: 2px solid red;
+}
+
+input:invalid + span::before {
+  content: "✖";
+  color: red;
+}
+
+input:valid + span::before {
+  content: "✓";
+  color: green;
+}
+
+/*
+  :in-range & :out-of-range
+    These match numeric input where range limits are specified using min & max
+  
+    Numeric Types: number, range, date, month, week, time, datetime
+*/
+input + span {
+  position: relative;
+}
+
+input:out-of-range + span::after {
+  color: white;
+  background-color: red;
+  width: 155px;
+  content: "Outside allowable value range";
+  left: -182px;
+}
+
+/*
+  :enabled & :disabled
+    Sometimes we might want to disable some controls & that can be styled accordingly with :disabled
+    disabled controls are not submitted to server
+*/
+input[type="text"]:disabled {
+  background: #eee;
+  border: 1px solid #ccc;
+}
+
+.disabled-label {
+  color: #aaa;
+}
+
+/*
+  :read-only & :read-write
+  read-only inputs are submitted to server but aren't editable by the user
+  :read-write is default behavior of controls
+*/
+input:read-only {
+  border: 0;
+  box-shadow: none;
+  background-color: white;
+}
+/*
+  :default applies to radio & checkbox that are checked by default on page load
+      This styling will apply even when user changes the selection
+  :checked applies to selected controls
+  :indeterminate When radios/checkboxes are neither checked nor unchecked
+    -When all radio in same radio group are unchecked
+    -When :indeterminate property is set using JS
+    -progress elements that have no value
+*/
+#buttons input,
+#buttons label {
+  display: inline-block;
+  margin: initial;
+  padding: initial;
+  width: auto;
+}
+
+#buttons input ~ span {
+  position: relative;
+}
+
+#buttons input:default ~ span::after {
+  font-size: 0.7rem;
+  position: absolute;
+  content: "Default";
+  color: white;
+  background-color: black;
+  padding: 5px 10px;
+  right: -65px;
+  top: -3px;
+}
+
+/*
+  More Pseudo Classes:
+    :focus-within- matches an element that has received focus or contains an element that has received focus.
+                Use- If we want the whole form to highlight if any of the control within is focused
+    
+    :focus-visible- matches focused elements that received focus via keyboard interaction
+                Use-  if we want to show a different style for keyboard focus compared to mouse (or other) focus.
+    
+    :placeholder-shown- matches <input> and <textarea> elements that have their placeholder showing because the value of the element is empty.
+  
+  
+*/
