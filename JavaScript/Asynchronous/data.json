@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Shivangam Soni",
+    "age": 22,
+    "skills": ["HTML5", "CSS3", "JS", "AWS"]
+  },
+  {
+    "name": "Akhil Thakur",
+    "age": 21,
+    "skills": ["C", "PhotoShop", "Graphic Designing", "Video Editing"]
+  }
+]

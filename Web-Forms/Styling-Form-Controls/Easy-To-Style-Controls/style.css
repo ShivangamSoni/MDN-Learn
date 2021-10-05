@@ -1,0 +1,39 @@
+div {
+  margin: 0.5rem 1rem;
+}
+/*
+  In Some Browsers font-family & font-size do not inherit from heir parents
+
+  Form controls size is also dependent upon th system.
+
+  Hence, we can add the following reset to make the Form COntrols look more consistent by default
+
+  [Note: input:submit doesn't have any effect of font-family inherit. Another reason to use the button:submit instead of input:submit]
+*/
+.withReset button,
+.withReset input,
+.withReset select,
+.withReset textarea {
+  font-family: inherit;
+  font-size: 100%;
+
+  width: 150px; /* Just for Demonstration. Some browsers center Radio & Checkbox within the alloted space.*/
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*
+  Fieldset & legend position can be styled using position
+*/
+.withLegendStyling fieldset {
+  position: relative;
+}
+
+.withLegendStyling > fieldset > legend {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: hsl(0, 0%, 0%);
+  color: hsl(0, 0%, 100%);
+}

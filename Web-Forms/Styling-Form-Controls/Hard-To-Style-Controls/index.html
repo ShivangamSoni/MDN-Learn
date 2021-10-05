@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Hard to Style Controls</title>
+  </head>
+  <body>
+    <!-- 
+      Controls Bad For Styling (Difficult & need some CSS tricks)
+        1. Checkbox & Radio Buttons
+        2. input:search
+    -->
+    <form id="appearNone">
+      <p>
+        <label for="search">search: </label>
+        <input id="search" name="search" type="search" />
+      </p>
+      <p>
+        <label for="text">text: </label>
+        <input id="text" name="text" type="text" />
+      </p>
+      <p>
+        <label for="date">date: </label>
+        <input id="date" name="date" type="datetime-local" />
+      </p>
+      <p>
+        <label for="radio">radio: </label>
+        <input id="radio" name="radio" type="radio" />
+      </p>
+      <p>
+        <label for="checkbox">checkbox: </label>
+        <input id="checkbox" name="checkbox" type="checkbox" />
+      </p>
+      <p><input type="submit" value="submit" /></p>
+      <p><input type="button" value="button" /></p>
+    </form>
+
+    <form id="searchForm">
+      <label for="mySearch">Search: </label>
+      <input type="search" id="mySearch" />
+    </form>
+
+    <form id="radioCheck">
+      <span><input type="checkbox" /></span>
+      <span><input type="radio" /></span>
+    </form>
+
+    <form id="customRadioCheck">
+      <fieldset>
+        <legend>Fruit preferences</legend>
+        <p>
+          <label>
+            <input type="checkbox" name="fruit-1" value="cherry" />
+            I like cherry
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" name="fruit-2" value="banana" disabled />
+            I can't like banana
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" name="fruit-3" value="strawberry" />
+            I like strawberry
+          </label>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Favorite Fruit</legend>
+        <p>
+          <label>
+            <input type="radio" name="fruit" value="cherry" />
+            I like cherry
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="radio" name="fruit" value="banana" disabled />
+            I can't like banana
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="radio" name="fruit" value="strawberry" />
+            I like strawberry
+          </label>
+        </p>
+      </fieldset>
+
+      <p>
+        <input type="checkbox" id="toggle" />
+        <label for="toggle">
+          <span class="on">ON</span>
+          <span class="off">OFF</span>
+        </label>
+      </p>
+    </form>
+  </body>
+</html>

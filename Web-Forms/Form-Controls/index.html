@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <style>
+      .inputGroup {
+        width: max-content;
+        margin: 1rem auto;
+      }
+    </style>
+    <title>Form Controls</title>
+  </head>
+  <body>
+    <form action="" method="POST">
+      <div class="inputGroup">
+        <input type="text" placeholder="Text" />
+      </div>
+      <div class="inputGroup">
+        <input type="tel" placeholder="Tel" />
+      </div>
+      <div class="inputGroup">
+        <input type="number" placeholder="Number" min="10" max="100" step="any" value="20" />
+      </div>
+      <div class="inputGroup">
+        <input type="email" placeholder="Email" />
+      </div>
+      <div class="inputGroup">
+        <input type="password" placeholder="Password" />
+      </div>
+      <div class="inputGroup">
+        <input type="search" placeholder="Search" />
+      </div>
+      <div class="inputGroup">
+        <input type="url" placeholder="URL" />
+      </div>
+
+      <div class="inputGroup">
+        <input type="range" min="10" max="100" step="2" value="20" />
+      </div>
+      <div class="inputGroup"><input type="radio" /> Radio Button</div>
+      <div class="inputGroup"><input type="checkbox" /> Checkbox</div>
+
+      <div class="inputGroup">
+        <input type="datetime" />
+      </div>
+      <div class="inputGroup">
+        <input type="datetime-local" />
+      </div>
+      <div class="inputGroup">
+        <input type="time" />
+      </div>
+      <div class="inputGroup">
+        <input type="date" />
+      </div>
+      <div class="inputGroup">
+        <input type="month" />
+      </div>
+      <div class="inputGroup">
+        <input type="week" />
+      </div>
+
+      <div class="inputGroup">
+        <input type="color" />
+      </div>
+      <div class="inputGroup">
+        <input type="file" accept="image/*" />
+      </div>
+
+      <div class="inputGroup">
+        <textarea placeholder="TextArea" cols="30" rows="8"></textarea>
+      </div>
+
+      <!-- If Value is Omitted for Options the content between tags is sent as Value -->
+      <div class="inputGroup">
+        <select name="fruits">
+          <option selected>Mango</option>
+          <option>Cherry</option>
+          <option>Banana</option>
+        </select>
+      </div>
+      <!-- optgroup can be used to group together options -->
+      <div class="inputGroup">
+        <select name="fruits_veggies">
+          <optgroup label="Fruits">
+            <option selected>Mango</option>
+            <option>Cherry</option>
+            <option>Banana</option>
+          </optgroup>
+          <optgroup label="Vegetables">
+            <option>Spinach</option>
+            <option>Carrots</option>
+            <option>Beets</option>
+          </optgroup>
+        </select>
+      </div>
+      <!-- 
+        "multiple" attribute allows the user to select multiple options, but the dropdown coverts into a scrollable selection area.
+        we can use size attribute to specify how many options are shown at once.
+       -->
+      <div class="inputGroup">
+        <select name="fruits_veggies" multiple size="10">
+          <optgroup label="Fruits">
+            <option>Mango</option>
+            <option>Cherry</option>
+            <option>Banana</option>
+          </optgroup>
+          <optgroup label="Vegetables">
+            <option>Spinach</option>
+            <option>Carrots</option>
+            <option selected>Beets</option>
+          </optgroup>
+        </select>
+      </div>
+      <!-- 
+        Autocomplete Box using datalist
+
+        within the datalist we can add a Select to create a fall back for unsupported Browsers 
+        For unsupported browsers the Select will be Shown along side the Text Input
+      -->
+      <div class="inputGroup">
+        <label for="myFruit">What's your Favorite Fruit?</label>
+        <input type="text" id="myFruit" name="myFruit" list="suggestions" />
+        <datalist id="suggestions">
+          <label for="fruitList">Or Pick a Option: </label>
+          <select name="fruitList" id="fruitList">
+            <option>Apple</option>
+            <option>Banana</option>
+            <option>Blackberry</option>
+            <option>Blueberry</option>
+            <option>Lemon</option>
+            <option>Lychee</option>
+            <option>Mango</option>
+            <option>Peach</option>
+            <option>Pear</option>
+          </select>
+        </datalist>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="inputGroup">
+        <progress max="100" value="75"></progress>
+      </div>
+      <!-- Meter -->
+      <div class="inputGroup">
+        <meter min="0" max="100" low="40" high="79" optimum="100" value="80"></meter>
+      </div>
+
+      <div class="inputGroup">
+        <input type="button" value="Anonymous Button" />
+      </div>
+      <div class="inputGroup">
+        <input type="submit" value="Submit" />
+      </div>
+      <div class="inputGroup">
+        <input type="reset" value="Reset Button" />
+      </div>
+      <div class="inputGroup">
+        <input type="image" src="" alt="Image Submit Button" />
+      </div>
+    </form>
+  </body>
+</html>

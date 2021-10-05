@@ -1,0 +1,133 @@
+/*
+ Normalize for Controls
+*/
+button,
+label,
+input,
+select,
+progress,
+meter {
+  display: block;
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px;
+  height: 30px;
+}
+
+input[type="text"],
+input[type="datetime-local"],
+input[type="color"],
+select {
+  box-shadow: inset 1px 1px 3px #ccc;
+  border-radius: 5px;
+}
+
+/*
+  Select:
+  Styling Drop-downs arrow as it varies from browser to browser.
+
+  The main problem that remains with select is that we can't style options
+  Some browsers will style the options if styled separately but doesn't inherit any property
+  Almost no browser allows any kind of spacing adjustments like: padding
+
+  So, best solution in case would be to create an Custom Select
+*/
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  pointer-events: none;
+  content: "▼";
+  font-size: 1rem;
+  position: absolute;
+  top: 20%;
+  right: 1%;
+}
+
+/*
+  Date Inputs:
+    appearance: none; doesn't have much effect on the styling of these controls
+    the date & time selectors are dependent on the browser hence we can't style them at all.
+    similarly number input also have a spinner for incrementing & decrementing the values.
+
+    So the best & only possible solution for these controls is using a library or create your own Custom control
+*/
+
+/*
+  Range: 
+  we can style the Slider Track as follow.
+  but styling the Drag Handle is difficult to customize
+*/
+input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: hsl(0, 100%, 50%);
+  height: 5px;
+  border-radius: 20px;
+  padding: 0;
+}
+
+/*
+  Color:
+    The default Color control is not bad, it just have a border which can be removed easily.
+
+    But to create a different looking or complex styled control, Custom Control is the only Solution
+*/
+input[type="color"] {
+  border: 0;
+  padding: 0;
+}
+
+/*
+  File:
+    File Control's text can be easily styled & it inherits from parent
+    the only problem is that the button is completely out of our control
+    we can't style anything related to the button; size, text, font, nothing
+  
+    One solution is to hide the control, have a label & style it as required.
+
+    Another solution is again using a Custom Control
+*/
+input[type="file"] {
+  height: 0;
+  padding: 0;
+  opacity: 0;
+}
+
+label[for="file"] {
+  box-shadow: 1px 1px 3px hsl(0, 0%, 80%);
+  background: linear-gradient(to bottom, hsl(0, 0%, 93%), hsl(0, 0%, 80%));
+  border: 1px solid hsl(0, 0%, 66%);
+  border-radius: 5px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+label[for="file"]:hover,
+label[for="file"]:focus {
+  background: linear-gradient(to bottom, hsl(0, 0%, 100%), hsl(0, 0%, 87%));
+}
+
+label[for="file"]:active {
+  box-shadow: inset 1px 1px 3px hsl(0, 0%, 80%);
+}
+
+/*
+  Meter & Progress:
+    These are the worse as apart from width & background-Color
+    Everything else is almost impossible to style because of high dependency upon browsers
+    Also, in these cases appearance: none; doesn't lower the difficulty at all.
+  
+    So, only solution is Custom Controls
+*/

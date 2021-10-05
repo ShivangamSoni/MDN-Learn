@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <title>Structuring Web Form</title>
+  </head>
+  <body>
+    <form action="#" method="POST">
+      <fieldset>
+        <legend>Pizza Size</legend>
+        <p>
+          <input type="radio" name="size" id="size_1" value="small" />
+          <label for="size_1">Small</label>
+        </p>
+        <p>
+          <input type="radio" name="size" id="size_2" value="medium" />
+          <label for="size_2">Medium</label>
+        </p>
+        <p>
+          <input type="radio" name="size" id="size_3" value="large" />
+          <label for="size_3">Large</label>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Pizza Toppings</legend>
+        <p>
+          <input type="radio" name="topping" id="topping_1" value="mushrooms" />
+          <label for="topping_1">Mushrooms</label>
+        </p>
+        <p>
+          <input type="radio" name="topping" id="topping_2" value="extra_cheese" />
+          <label for="topping_2">Extra Cheese</label>
+        </p>
+        <p>
+          <input type="radio" name="topping" id="topping_3" value="onions" />
+          <label for="topping_3">Onions</label>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Implicitly & Explicitly Associated Labels</legend>
+        <p>
+          <label for="fName">First Name:</label>
+          <input type="text" name="user_first_name" id="fName" />
+        </p>
+        <p>
+          <!-- It's recommended to add for attribute for implicit as well -->
+          <label for="lName"> Last Name: <input type="text" name="user_last_name" id="lName" /> </label>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Multiple Labels</legend>
+        <p>Required fields are followed by <abbr title="Required">*</abbr>.</p>
+        <div>
+          <label for="username1">Name:</label>
+          <input id="username1" type="text" name="username1" />
+          <label for="username1"><abbr title="Required" aria-label="required">*</abbr></label>
+        </div>
+        <!-- Multiple Labels are allowed by HTML but it's a bad Idea as some Screen Readers can Get confused because of it -->
+        <!-- would be better done like this: -->
+        <div>
+          <label for="username2">
+            <span>Name:</span>
+            <input id="username2" type="text" name="username2" />
+            <abbr title="required" aria-label="required">*</abbr>
+          </label>
+        </div>
+
+        <!-- But this is probably best: Will require some css for desired structure -->
+        <div>
+          <label for="username3">Name: <abbr title="required" aria-label="required">*</abbr></label>
+          <input id="username3" type="text" name="username3" />
+        </div>
+      </fieldset>
+
+      <!-- Its common to use li, ul, ol, p & div to structure the Form properly -->
+    </form>
+  </body>
+</html>

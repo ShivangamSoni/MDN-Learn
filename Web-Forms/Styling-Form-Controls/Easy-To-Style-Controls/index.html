@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Styling Form Controls</title>
+  </head>
+  <body>
+    <!-- 
+      Controls Good for Styling:
+        1. Form
+        2. fieldset & legend
+        3. Single-line text inputs (except search)
+        4. textarea
+        5. button
+        6. label
+        7. output
+     -->
+    <div class="withoutReset">
+      <div class="inputGroup"><input type="checkbox" /></div>
+      <div class="inputGroup"><input type="radio" /></div>
+      <div class="inputGroup"><input type="text" /></div>
+      <div class="inputGroup"><input type="date" /></div>
+      <div class="inputGroup">
+        <select>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div class="inputGroup"><textarea></textarea></div>
+      <div class="inputGroup"><input type="submit" /></div>
+      <div class="inputGroup"><button type="submit">Submit</button></div>
+    </div>
+
+    <div class="withReset">
+      <div class="inputGroup"><input type="radio" /></div>
+      <div class="inputGroup"><input type="checkbox" /></div>
+      <div class="inputGroup"><input type="text" /></div>
+      <div class="inputGroup"><input type="date" /></div>
+      <div class="inputGroup">
+        <select>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div class="inputGroup"><textarea></textarea></div>
+      <div class="inputGroup"><input type="submit" /></div>
+      <div class="inputGroup"><button type="submit">Submit</button></div>
+    </div>
+
+    <div class="withoutLegendStyling">
+      <fieldset>
+        <legend>Choose All the Fruits you Like</legend>
+        <div class="inputGroup"><input type="checkbox" />Apple</div>
+        <div class="inputGroup"><input type="checkbox" />Mango</div>
+        <div class="inputGroup"><input type="checkbox" />Cherry</div>
+        <div class="inputGroup"><input type="checkbox" />Strawberry</div>
+        <div class="inputGroup"><input type="checkbox" />Kiwi</div>
+      </fieldset>
+    </div>
+
+    <div class="withLegendStyling">
+      <fieldset>
+        <legend>Choose All the Fruits you Like</legend>
+        <div class="inputGroup"><input type="checkbox" />Apple</div>
+        <div class="inputGroup"><input type="checkbox" />Mango</div>
+        <div class="inputGroup"><input type="checkbox" />Cherry</div>
+        <div class="inputGroup"><input type="checkbox" />Strawberry</div>
+        <div class="inputGroup"><input type="checkbox" />Kiwi</div>
+      </fieldset>
+    </div>
+  </body>
+</html>
