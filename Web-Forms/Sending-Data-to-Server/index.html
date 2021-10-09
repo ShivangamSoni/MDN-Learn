@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sending Data to Server</title>
+  </head>
+  <body>
+    <!-- 
+      Three attributes are necessary to send form data to a server:
+        1. action: used to specify the url to which the data will be sent
+                    Default: current file
+        2. method: HTTP Methods using which data is sent
+                    Default: GET
+                    GET encodes the form data in URL. like: example.com/?name=shivi&age=22
+                    POST sends the data in the HTTP request Body.
+        3. enctype: specifies the type of data being sent
+                    Default: application/x-www-form-urlencoded
+                    In case we want to send just text default is good
+                    for files we need to use: multipart/form-data (all files sent in separate parts & one part for text data)
+                    we can't send files using GET because files can't be encoded into url, so it sends just the file name
+    -->
+    <form action="./index.html" method="post" enctype="multipart/form-data">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" />
+      </div>
+      <div>
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" />
+      </div>
+      <div>
+        <label for="file">Choose a File</label>
+        <input type="file" name="file" id="file" accept=".png, .jpeg" />
+      </div>
+      <div>
+        <button type="submit">Send the Data</button>
+      </div>
+    </form>
+  </body>
+</html>
